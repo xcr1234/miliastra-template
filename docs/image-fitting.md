@@ -20,12 +20,12 @@
 
 ## 方案一：Codex + CSS Skill + 编辑器
 
-1. 阅读上游 `miliastra-image-css-builder`，明确画布、图元预算与需要保留的识别特征。它生成的是编辑器可解析的 CSS 子集，普通网页 CSS 的渐变、伪元素、滤镜等不能直接套用。
+1. 阅读项目内 [miliastra-image-css-builder](../.agents/skills/miliastra-image-css-builder/SKILL.md)，明确画布、图元预算与需要保留的识别特征。它生成的是编辑器可解析的 CSS 子集，普通网页 CSS 的渐变、伪元素、滤镜等不能直接套用。
 2. 使用符合该 Skill 约定的 CSS；若直接生成完整场景 JSON，应遵循编辑器的 `canvas`、扁平 `elements` 等结构，不把普通业务 JSON 当作场景。
 3. 在在线或本地图片编辑器导入 CSS/JSON，检查画布尺寸、图元数量、层序、颜色、透明度与警告，以导入后的预览为准。
 4. 调整关键轮廓、五官或 UI 对齐，保存可继续编辑的场景 JSON，再导出所需 GIA 或 Lua。
 
-本模板目前只记录该外部 Skill 的入口，没有安装它或配置该网站的 WebMCP。需要项目内安装时，将 Skill 及必要配套资料放在项目 `.agents/skills/`，核对相对引用；不安装到全局。只有实际发现页面 WebMCP 能力后才按其 schema 操作，否则通过文件导入/导出。
+该 Skill 已随模板放入项目 `.agents/skills/miliastra-image-css-builder/`，版本 `1.0.13`，固定上游提交 `cd4e08accc63f19774f844f38ad9b9c8dc2d3b79`，配套参考和来源说明一并纳入 Git；后续 clone 无需另装全局 Skill。Skill 本身不会启动图片服务或配置网站 WebMCP，只有实际发现页面工具后才按其 schema 操作，否则通过文件导入/导出。
 
 ## 方案二：自动拟合
 

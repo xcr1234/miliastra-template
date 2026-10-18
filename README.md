@@ -26,7 +26,7 @@
 - **方案二：上传参考图 → 算法拟合 → 导出**，在线使用[千星图片图元拟合](https://qx-img.070077.xyz/)，适合头像、立绘和复杂插画。
 - 默认复杂图片先用方案二拟合，保存 JSON，再按需导入方案一编辑器精修。在线服务不可用时，可克隆对应 GitHub 仓库在本地启动，源码与依赖均留在项目 `.local-tools/`。
 
-具体选择、文件留存、Windows 本地部署命令和单文件 Lua 接入见 [图片拟合指南](docs/image-fitting.md)。本模板记录了使用流程，未安装这两个图片服务或额外的 CSS Skill。
+具体选择、文件留存、Windows 本地部署命令和单文件 Lua 接入见 [图片拟合指南](docs/image-fitting.md)。[miliastra-image-css-builder](.agents/skills/miliastra-image-css-builder/SKILL.md) 及配套参考已随模板放在项目内，clone 后可用；两个图片服务本体仍按需要在线使用或本地部署。
 
 ## 每次开始新游戏
 
