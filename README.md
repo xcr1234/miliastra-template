@@ -43,10 +43,10 @@ npm run build:lua
 
 以上命令只检查模板工具链、构建空入口；开发具体游戏时，从七步规范的策划案开始。
 
-本地仓库也可以作为 clone 来源：
+从 GitHub 创建新项目：
 
 ```sh
-git clone E:/miliastra/miliastra-template E:/miliastra/my-game
+git clone https://github.com/xcr1234/miliastra-template.git E:/miliastra/my-game
 ```
 
 `clone` 会保留模板历史及 `origin`；新游戏若使用独立远程仓库，按实际仓库地址调整 `origin`。修改 `package.json` 的项目名后，用 `npm install --package-lock-only` 同步锁文件；游戏名在 `lua.project.json`。
