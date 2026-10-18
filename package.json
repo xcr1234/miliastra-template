@@ -1,0 +1,25 @@
+{
+  "name": "miliastra-template",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Project-scoped Miliastra skills, MCP tools, modular Lua build and deployment",
+  "engines": { "node": ">=22.19.0" },
+  "scripts": {
+    "setup": "node tools/setup-project.mjs",
+    "check": "node scripts/check-integrations.mjs",
+    "build": "node tools/lua-project.mjs build",
+    "build:lua": "node tools/lua-project.mjs build",
+    "deploy:lua": "node tools/lua-project.mjs deploy",
+    "test": "node --test scripts/test-lua-bundle.mjs scripts/test-lua-project.mjs scripts/test-setup.mjs",
+    "preview": "beyond-simulator-web --workspace . --open"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "1.32.1",
+    "beyond-simulator-mcp": "0.4.1",
+    "beyond-simulator-web": "0.4.1",
+    "fengari": "0.1.5",
+    "undici": "8.11.2",
+    "zod": "4.6.6"
+  }
+}
