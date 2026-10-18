@@ -1,4 +1,5 @@
 node_modules/
+.local-tools/
 dist/
 .codex/config.toml
 .codex/mcp.local.json
