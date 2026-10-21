@@ -31,6 +31,36 @@ return M
 node tools/bundle-lua.mjs --root src --entry main --out dist/main.lua
 ```
 
+## 编译日期与初始化日志
+
+每次构建将构建机器的本地系统时间写入产物头部、行号映射的 `builtAt` 字段及构建终端，格式为 `2026-10-21 23:00:00.000 +08:00`。时区跟随系统配置，不强制使用 UTC 或北京时间；时间代表构建时刻，不是游戏启动时刻。
+
+`lua.project.json` 的 `lua.startupLog` 控制运行时日志，省略时默认开启；必须使用布尔值：
+
+```json
+{
+  "name": "my-game",
+  "lua": {
+    "root": "src",
+    "entry": "main",
+    "out": "dist/main.lua",
+    "startupLog": true
+  }
+}
+```
+
+开启时，构建器在加载入口后包装已有的 `OnStart` 回调，先打印编译日期及初始化开始日志，原回调正常返回后打印完成日志。原回调的参数、返回值和错误继续传递；初始化失败不会打印完成日志。没有 `OnStart` 的纯模块产物不会新增生命周期回调，也不会打印这些日志。
+
+将 `startupLog` 改为 `false` 后重新构建，即可关闭这些运行时日志；不会关闭游戏源码自己调用的 `print`，编译日期仍保留在产物头部和构建终端。独立打包器通过 `--startup-log false` 关闭：
+
+```sh
+node tools/bundle-lua.mjs --root src --entry main --out dist/main.lua --startup-log false
+```
+
+日志使用官方《[客户端控件API文档](https://act.mihoyo.com/ys/ugc/tutorial/detail/mhtakr07vej4)》的 `print(...)` 普通级别日志接口；在千星编辑器日志中勾选“客户端脚本”查看。资料依据为知识库 2026-09-25 快照。
+
+构建时间变化会使产物内容和 SHA-256 变化，即使模块源码未改。发布命令仍每次重新构建，因此再次发布通常会备份并替换旧产物；仅当包括编译时间在内的完整内容相同时才跳过复制。
+
 ## 发布到指定文件
 
 `npm run setup -- --target "完整目标.lua"` 只配置目标，不复制。也可以手工创建 `lua.deploy.local.json`：

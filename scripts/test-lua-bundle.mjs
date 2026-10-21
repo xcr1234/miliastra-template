@@ -21,7 +21,7 @@ async function fixture(t, files) {
   return { root, out, entry: 'main' };
 }
 
-function execute(code, assertions) {
+function execute(code, assertions, setup = '') {
   const state = lauxlib.luaL_newstate();
   lualib.luaL_openlibs(state);
   const run = source => {
@@ -31,6 +31,7 @@ function execute(code, assertions) {
   };
   try {
     run('require=nil; package=nil; load=nil; loadfile=nil; dofile=nil; io=nil; os=nil');
+    if (setup) run(setup);
     run(code);
     run(assertions);
   } finally {
@@ -109,6 +110,7 @@ test('Lua syntax errors identify the source and do not overwrite the previous bu
 });
 
 test('build is deterministic and cannot overwrite the source tree', async t => {
+  t.mock.timers.enable({ apis: ['Date'], now: 1792569600000 });
   const options = await fixture(t, { 'main.lua': 'return require("value")', 'value.lua': 'return 42' });
   const first = await bundleLua(options);
   const second = await bundleLua(options);
@@ -116,4 +118,53 @@ test('build is deterministic and cannot overwrite the source tree', async t => {
   assert.deepEqual(first.map, second.map);
   await assert.rejects(bundleLua({ ...options, out: join(options.root, 'main.lua') }), /outside the Lua source root/);
   assert.equal(await readFile(join(options.root, 'main.lua'), 'utf8'), 'return require("value")');
+});
+
+test('build date uses local system time and startup logs surround OnStart without changing its values', async t => {
+  const options = await fixture(t, {
+    'main.lua': 'function OnStart(a, b) print("game started"); return a, nil, b end\nreturn { value = 42 }',
+  });
+  const before = Date.now();
+  const result = await bundleLua(options);
+  const after = Date.now();
+  assert.match(result.builtAt, /^\d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2}\.\d{3} [+-]\d{2}:\d{2}$/);
+  const instant = Date.parse(result.builtAt.replace(' ', 'T').replace(' ', ''));
+  assert.ok(instant >= before && instant <= after);
+  assert.equal(new Date(instant).getHours(), Number(result.builtAt.slice(11, 13)));
+  assert.ok(result.code.includes(`-- Build date (local): ${result.builtAt}`));
+  execute(`entry = (function()\n${result.code}\nend)()`, `
+    assert(#logs == 0)
+    assert(entry.value == 42)
+    local result = table.pack(OnStart(7, 9))
+    assert(result.n == 3 and result[1] == 7 and result[2] == nil and result[3] == 9)
+    assert(#logs == 4)
+    assert(logs[1] == "[miliastra] Build date (local): ${result.builtAt}")
+    assert(logs[2] == "[miliastra] Initialization started (OnStart)")
+    assert(logs[3] == "game started")
+    assert(logs[4] == "[miliastra] Initialization completed (OnStart)")
+  `, 'logs = {}; print = function(value) logs[#logs + 1] = value end');
+});
+
+test('startup logs can be disabled while keeping the build date and original callback', async t => {
+  const options = await fixture(t, { 'main.lua': 'function OnStart() return 42 end\noriginalStart = OnStart' });
+  const result = await bundleLua({ ...options, startupLog: false });
+  assert.ok(result.code.includes(`-- Build date (local): ${result.builtAt}`));
+  execute(result.code, 'assert(OnStart == originalStart); assert(OnStart() == 42)', 'print = nil');
+  await assert.rejects(bundleLua({ ...options, startupLog: 'false' }), /startupLog must be a boolean/);
+});
+
+test('failed initialization propagates its error and never logs completion', async t => {
+  const options = await fixture(t, { 'main.lua': 'function OnStart() error("initialization failed") end' });
+  const result = await bundleLua(options);
+  execute(result.code, `
+    local ok, err = pcall(OnStart)
+    assert(not ok and string.find(err, "initialization failed", 1, true))
+    assert(#logs == 2)
+  `, 'logs = {}; print = function(value) logs[#logs + 1] = value end');
+});
+
+test('module-only bundles do not acquire a startup callback', async t => {
+  const options = await fixture(t, { 'main.lua': 'return 42' });
+  const result = await bundleLua(options);
+  execute(result.code, 'assert(OnStart == nil)', 'print = function() error("unexpected log") end');
 });

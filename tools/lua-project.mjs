@@ -28,7 +28,7 @@ export async function buildProject(root = defaultRoot) {
   if (!inside(root, source) || !inside(root, output) || !output.toLowerCase().endsWith('.lua')) {
     throw new Error('Lua source and output must stay in this project; output must end in .lua');
   }
-  return bundleLua({ root: source, entry: settings.entry ?? 'main', out: output });
+  return bundleLua({ root: source, entry: settings.entry ?? 'main', out: output, startupLog: settings.startupLog });
 }
 
 export async function deployProject(root = defaultRoot, { dryRun = false, overwrite = false } = {}) {
@@ -104,6 +104,7 @@ if (process.argv[1] && import.meta.url === pathToFileURL(resolve(process.argv[1]
     if (action === 'build') {
       const result = await buildProject();
       console.log(`Bundled ${result.moduleCount} Lua modules -> ${result.output}`);
+      console.log(`Build date (local): ${result.builtAt}`);
     } else {
       const result = await deployProject(defaultRoot, { dryRun: flags.includes('--dry-run'), overwrite: flags.includes('--overwrite') });
       console.log(json(result));

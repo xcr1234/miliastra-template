@@ -46,6 +46,7 @@ test('deploys byte-identical Lua only and backs up a previous deployed version',
 });
 
 test('identical deployment is a no-op; externally modified content needs an explicit overwrite', async t => {
+  t.mock.timers.enable({ apis: ['Date'], now: 1792569600000 });
   const { root, target } = await fixture(t);
   await deployProject(root);
   assert.equal((await deployProject(root)).action, 'unchanged');
@@ -55,6 +56,22 @@ test('identical deployment is a no-op; externally modified content needs an expl
   assert.equal(await readFile(target, 'utf8'), '-- edited in the game folder');
   const result = await deployProject(root, { overwrite: true });
   assert.equal(await readFile(result.backup, 'utf8'), '-- edited in the game folder');
+});
+
+test('project startupLog setting defaults on and can be disabled', async t => {
+  const { root } = await fixture(t);
+  const enabled = await buildProject(root);
+  assert.ok(enabled.code.includes('[miliastra] Initialization started (OnStart)'));
+  const projectPath = join(root, 'lua.project.json');
+  const project = JSON.parse(await readFile(projectPath, 'utf8'));
+  project.lua.startupLog = false;
+  await writeFile(projectPath, JSON.stringify(project));
+  const disabled = await buildProject(root);
+  assert.ok(!disabled.code.includes('[miliastra] Initialization started (OnStart)'));
+  assert.ok(disabled.code.includes('-- Build date (local):'));
+  project.lua.startupLog = 'false';
+  await writeFile(projectPath, JSON.stringify(project));
+  await assert.rejects(buildProject(root), /startupLog must be a boolean/);
 });
 
 test('first deployment protects an existing target', async t => {

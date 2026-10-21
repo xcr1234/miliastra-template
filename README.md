@@ -30,7 +30,15 @@
 
 ## 每次开始新游戏
 
-Node.js 22.19+。clone 本仓库到新目录后，在新项目根目录运行：
+1. 打开 [miliastra-template](https://github.com/xcr1234/miliastra-template)，点击 **Use this template → Create a new repository**，填写你自己的游戏仓库名称并创建。
+2. 将刚创建的仓库克隆到本地（把下面地址替换为你的新仓库地址）：
+
+   ```sh
+   git clone https://github.com/你的用户名/你的游戏仓库.git
+   cd 你的游戏仓库
+   ```
+
+3. 安装 Node.js 22.19+，在新项目根目录运行：
 
 ```sh
 npm ci
@@ -43,13 +51,13 @@ npm run build:lua
 
 以上命令只检查模板工具链、构建空入口；开发具体游戏时，从七步规范的策划案开始。
 
-从 GitHub 创建新项目：
+如果只想查看或试用模板，也可以直接克隆模板仓库：
 
 ```sh
 git clone https://github.com/xcr1234/miliastra-template.git E:/miliastra/my-game
 ```
 
-`clone` 会保留模板历史及 `origin`；新游戏若使用独立远程仓库，按实际仓库地址调整 `origin`。修改 `package.json` 的项目名后，用 `npm install --package-lock-only` 同步锁文件；游戏名在 `lua.project.json`。
+直接克隆模板会保留模板历史及 `origin`；使用 **Use this template** 创建自己的仓库后再克隆，`origin` 就是你自己的仓库。修改 `package.json` 的项目名后，用 `npm install --package-lock-only` 同步锁文件；游戏名在 `lua.project.json`。
 
 ## 开发、检查与预览
 
@@ -76,6 +84,22 @@ npm run setup -- --proxy http://127.0.0.1:7897
 代理保存在本项目 `.codex/mcp.local.json`，不会提交；清除配置用 `npm run setup -- --no-proxy`。宿主的网络限制仍以实际环境为准。
 
 `npm run preview` 启动项目内 Web 编辑器。首次按需创建模拟器存档，给客户端控件挂载 `dist/main.lua`；存档含内联脚本时同步打包内容。模板没有预建 UI 或游戏存档。
+
+## 编译日期与初始化日志
+
+`npm run build:lua` 会在终端和产物头部输出本次构建机器的**本地系统时间**，带时区偏移；系统使用北京时间时显示 `+08:00`。时间在构建时写入，不依赖游戏运行时的时钟。
+
+默认在 `OnStart` 执行时打印编译日期、初始化开始和完成日志，例如：
+
+```text
+[miliastra] Build date (local): 2026-10-21 23:00:00.000 +08:00
+[miliastra] Initialization started (OnStart)
+[miliastra] Initialization completed (OnStart)
+```
+
+在千星编辑器日志中勾选“客户端脚本”查看。初始化报错时保留错误，不打印完成日志。
+
+默认配置为 `lua.project.json` 中的 `lua.startupLog: true`；改成 `false` 后重新构建，即可关闭上述运行时日志。关闭后，构建终端和产物头部仍保留编译日期。完整配置示例见 [Lua 构建与发布](docs/lua-modules.md#编译日期与初始化日志)。
 
 ## 复制到用户指定路径
 
