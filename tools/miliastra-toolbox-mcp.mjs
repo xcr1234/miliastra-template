@@ -1,7 +1,8 @@
 #!/usr/bin/env node
 
-// Codex MCP adapter for the six HTTP tools exposed by dsh-plugin-miliastra-toolbox.
-// Source contract: https://github.com/1475505/dsh-plugin-miliastra-toolbox (f35d55c).
+// Project stdio MCP adapter for Miliastra-toolbox's six HTTP knowledge tools.
+// Historical contract: dsh-plugin-miliastra-toolbox (f35d55c).
+// Verified against Miliastra-toolbox (5ee8f5eb); provenance: docs/tool-sources.md.
 import { McpServer } from '@modelcontextprotocol/sdk/server/mcp.js';
 import { StdioServerTransport } from '@modelcontextprotocol/sdk/server/stdio.js';
 import { fetch, EnvHttpProxyAgent } from 'undici';
