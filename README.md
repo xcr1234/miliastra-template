@@ -83,7 +83,11 @@ npm run setup -- --proxy http://127.0.0.1:7897
 
 代理保存在本项目 `.codex/mcp.local.json`，不会提交；清除配置用 `npm run setup -- --no-proxy`。宿主的网络限制仍以实际环境为准。
 
-`npm run preview` 启动项目内 Web 编辑器。首次按需创建模拟器存档，给客户端控件挂载 `dist/main.lua`；存档含内联脚本时同步打包内容。模板没有预建 UI 或游戏存档。
+`npm run preview` 先构建 Lua、检查存档引用，再启动项目内 Web 编辑器；首次 clone 后无需手动准备 `dist/main.lua`。首次按需创建模拟器存档，给客户端控件挂载单文件产物，脚本 `path` 指向 `dist/main.lua`，`source` 留空。模板没有预建 UI 或游戏存档。
+
+存档提交 Git，用于维护 UI、索引与挂载；生成代码留在已忽略的 `dist/`。修改 Lua 后执行 `npm run build:lua`，再停止并重新启动试玩。提交前运行 `npm run check:saves`，它只读检查 Git 中已跟踪及未忽略的新建 `*.save.json`，发现内嵌源码、错误路径或缺失产物时退出失败，不自动改写文件。空模板没有存档时正常通过。
+
+旧存档中存在源码时，先比较并将有效改动合并回 `src/`，构建验证后才清空 `source`。分享可独立运行的工程时另带 `dist/main.lua`；仅复制存档不再包含 Lua。详见 [存档与生成代码](docs/lua-modules.md#模拟器与编辑器)。
 
 ## 编译日期与初始化日志
 

@@ -15,7 +15,7 @@
 - 上游两份 Skill 均声明 `license: Proprietary`，本地保留此标记。上游 `slug`、显示名称、版本和摘要移入 Codex 支持的 `metadata`；保留 `name`、`description`，调整 description 的触发范围。
 - 两份 `references/tools.md` 原样保留；两份 `SKILL.md` 保留原版工具选择、批量与顺序查询、领域示例、异常处理、排障和输出规范，并加入本项目接入说明：MCP 优先；工具未加载且允许网络访问时可直接 HTTP 查询；区分 MCP 文本内的结果与 HTTP 的 `data.result` 包裹，检查内部错误。
 - 本地语义澄清：节点图的 `side=client` 不等于客户端 Lua 控件；带关键词无结果不等于部署无语料，应通过无关键词查询核对；客户端 `related_nodes` 即使存在也为空；临时网络失败最多重试一次，不用换关键词解决连接或权限错误。来源标题无法唯一定位时说明限制，不假设支持文件名过滤、不将相关系统文档冒充精确来源全文。Lua 文档数量按快照标注，实际以服务返回为准。
-- Lua 工程约定另列为本地规则：`src/**/*.lua` 模块化维护、`dist/main.lua` 单文件构建、模拟器同步同次产物及保存，不将其称为官方限制。
+- Lua 工程约定另列为本地规则：`src/**/*.lua` 模块化维护、`dist/main.lua` 单文件构建、存档只保留产物路径/挂载且 `source` 留空、模拟器按路径读取同次产物、提交前执行只读 `check:saves`，不将其称为官方限制。
 
 默认远端知识库为 `https://ugc.070077.xyz`，HTTP 端点前缀为 `/api/v1/skills/miliastra-knowledge/tools/`；客户端和节点图工具共用端点前缀但使用不同语料。可用 `MILIASTRA_KNOWLEDGE_BASE_URL` 指定兼容服务。工具名和参数以当前 MCP schema 为准；响应结构与语料快照可能随部署更新，需要实际查询核验。
 

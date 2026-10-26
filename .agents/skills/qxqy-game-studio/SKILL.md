@@ -28,7 +28,7 @@ description: 按策划案、TDD 测试用例、HTML 效果展示、千星美术�
 - 步骤 2 在 HTML 之前，步骤 4 在 HTML 之后；步骤 1–4 不打开模拟器、不改存档、不运行 `runCase`。有效 TDD Red 要等步骤 5 的可运行骨架缺少目标生产行为；路径、JSON 和工具故障不算 Red。
 - 启动前按 PREFLIGHT 查找已配置的 `miliastra-toolbox` 系列、其他知识库服务或本地文档，遵守 `AGENTS.md`，核验能否读到所需官方 2D/Lua API 与指南。已有资料直接复用，仅询问缺项；不从普通 Lua/UI 或 3D 节点经验猜接口。
 - HTML 用于体验沟通；模拟器验证规则、布局与交互；真机证据验证平台实际行为。每条结果区分 `runtime=html|simulator|device`，模拟器绿灯不等于真机通过。
-- 本项目采用 Lua 模块化源码、单文件交付；步骤 5 按项目 `AGENTS.md` 和 `docs/lua-modules.md` 构建，模拟器和真机均使用同次打包的产物。
+- 本项目采用 Lua 模块化源码、单文件交付；步骤 5 按项目 `AGENTS.md` 和 `docs/lua-modules.md` 构建，模拟器和真机均使用同次打包的产物；受 Git 管理的存档只保留产物路径和挂载，`source` 留空，提交前运行 `npm run check:saves`。
 - 官方素材可以用；模拟器只预览 `100001–100006` 六种基础图元，其余图片显示缺失框，记录目标 ID 并在真机核验。千星原点左下、Y 向上，不能直接搬 HTML/CSS 坐标。
 - 操作前检查实际工具与 schema；有 `qxqy-simulator` 操作 Skill 时按需读取，其他宿主使用相应接入指南。没有可用模拟器工具时可继续步骤 1–4，不能声称通过模拟器或真机验证。
 

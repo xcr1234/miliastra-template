@@ -11,8 +11,9 @@
     "build": "node tools/lua-project.mjs build",
     "build:lua": "node tools/lua-project.mjs build",
     "deploy:lua": "node tools/lua-project.mjs deploy",
-    "test": "node --test scripts/test-lua-bundle.mjs scripts/test-lua-project.mjs scripts/test-setup.mjs",
-    "preview": "beyond-simulator-web --workspace . --open"
+    "test": "node --test scripts/test-save-references.mjs scripts/test-lua-bundle.mjs scripts/test-lua-project.mjs scripts/test-setup.mjs",
+    "check:saves": "node tools/check-save-references.mjs",
+    "preview": "npm run build:lua && npm run check:saves && beyond-simulator-web --workspace . --open"
   },
   "dependencies": {
     "@modelcontextprotocol/sdk": "1.32.1",

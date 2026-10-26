@@ -35,7 +35,7 @@ PREFLIGHT 不计入七步。新游戏按策划案 → TDD 用例 → HTML → �
 | `tests/` | 规则用例；测试 JSON 不是存档 |
 | `prototype/` | HTML 展示与操作说明 |
 | `docs/art-bible.md` | 参考图、目标素材和 UI 还原方案 |
-| `src/**/*.lua`、`dist/main.lua`、`<slug>.save.json` | 模块源码、单文件构建产物与完整工程，存档头部附近有 `"format": "qxqy-simulator-save"` |
+| `src/**/*.lua`、`dist/main.lua`、`<slug>.save.json` | 模块源码、忽略的单文件构建产物与工程引用（存档 `source` 留空），存档头部附近有 `"format": "qxqy-simulator-save"` |
 | `docs/tech-architecture.md` | 文件/控件职责、变量/信号、数据流和脚本挂载 |
 | `docs/device-handoff.md` | 真机导入、真实索引、脚本路径/挂载、同步方式与待办；可合并进已有交付说明 |
 | `records/playtest.md`、`export/` | 试玩/修复证据与交付资产 |

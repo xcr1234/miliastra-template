@@ -103,7 +103,7 @@ get_client_document(["客户端控件和客户端脚本", "客户端控件API文
 
 写 Lua 或配置 UI 控件前，读取《客户端控件和客户端脚本》《客户端控件API文档》及涉及的具体控件文档，核对接口名、参数、枚举、生命周期与挂载方式；已在本次任务读取且版本未变化时复用结果。
 
-遵守项目 `AGENTS.md`，按职责拆分 `src/**/*.lua`，入口 `src/main.lua` 保留生命周期回调，使用静态 `require`、模块返回 table、内部状态使用 local。通过 `npm run build:lua` 生成 `dist/main.lua`，模拟器与千星映射使用同次构建产物；修改后重新打包，同步存档中非空内联源码并显式保存。详见项目 [Lua 构建与发布](../../../docs/lua-modules.md)。这是本项目工程约定，不是官方单文件限制。
+遵守项目 `AGENTS.md`，按职责拆分 `src/**/*.lua`，入口 `src/main.lua` 保留生命周期回调，使用静态 `require`、模块返回 table、内部状态使用 local。通过 `npm run build:lua` 生成 `dist/main.lua`，模拟器与千星映射使用同次构建产物；修改后重新打包，存档只保留产物路径和挂载，`source` 留空；运行 `npm run check:saves` 并重启试玩，存档结构改动显式保存。旧内嵌源码先比较并将有效改动合并回模块，构建验证后再清空。详见项目 [Lua 构建与发布](../../../docs/lua-modules.md)。这是本项目工程约定，不是官方单文件限制。
 
 ## 来源与本地适配
 
