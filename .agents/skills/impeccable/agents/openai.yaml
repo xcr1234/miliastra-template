@@ -1,0 +1,4 @@
+interface:
+  display_name: "Impeccable · 千星界面审查"
+  short_description: "千星奇域游戏界面的层级、布局、文案、反馈与设备适配审查"
+  default_prompt: "使用 $impeccable 的项目适配流程评审并打磨目标游戏界面，注明实际证据来源。"

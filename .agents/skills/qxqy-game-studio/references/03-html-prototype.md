@@ -15,6 +15,8 @@ prototype/README.md    启动、操作、不可移植项、坐标差异
 
 请用户体验目标是否易懂、成功/失败反馈和节奏。只按实际使用的工具记录试玩来源；没有浏览器操作工具时标 `browser-run: user`，不能声称 Agent 已亲自试玩。记录为 `runtime=html`。
 
+视觉初稿或明确重设计时，按需读 [Taste 项目入口](../../design-taste-frontend/SKILL.md) 探索配色、字体与构图；原型可操作后，按需读 [Impeccable 项目入口](../../impeccable/SKILL.md) 检查信息层级、按钮状态、反馈、中文与热区。已有方向明确时直接复用，不为工具重做美术方向。网页检测按游戏适用性判断，实际试玩与静态建议分开记录。
+
 将网页画面与动画分为 `must-reproduce`、`can-degrade`、`concept-only`，说明哪些效果需要在千星重新实现。网页新增或变更规则时回写策划案和用例。
 
 HTML 通常原点左上、Y 向下；千星原点左下、Y 向上。不可直接复制 DOM/CSS 坐标，也不逐行翻译 JavaScript 为 Lua。此步骤不操作模拟器。

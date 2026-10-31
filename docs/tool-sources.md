@@ -1,5 +1,7 @@
 # 工具来源
 
+- 视觉设计与界面审查：项目内附带 [Taste](../.agents/skills/design-taste-frontend/provenance.md) 2.1.5（MIT，固定提交 `12af471f627f866411b4bd785b19646d3672784c`）与 [Impeccable](../.agents/skills/impeccable/provenance.md) 4.8.0（Apache-2.0，固定提交 `df3a4abe7d0840d5f60324812c432e00b66a4e75`），接入日期 2026-10-31（Asia/Shanghai）。原始入口、配套文件、LICENSE/NOTICE 与 SHA-256 均保留；千星入口、单上下文评审及本地缓存包装属于模板适配。使用与更新见 [设计指南](design-skills.md)。
+
 - 模拟器与 Web 编辑器：`beyond-simulator-mcp@0.4.1`、`beyond-simulator-web@0.4.1`，来源 [miliastra-beyond-simulator](https://github.com/1475505/miliastra-beyond-simulator)。
 - `qxqy-game-studio` 工作流以模拟器仓库提交 `2c5a012eeee06ce52324655d5b988393eb8f46f5` 为基础，已按本模板的模块化源码、单文件构建与用户指定路径发布流程调整。
 - 节点图/Lua 知识库 Skill 以 [Miliastra-toolbox](https://github.com/1475505/Miliastra-toolbox) 的原版为基础；固定提交、配套参考和本地适配见下节。`tools/miliastra-toolbox-mcp.mjs` 是本项目的 HTTP → stdio MCP 适配器，不需要安装 Harness 插件。

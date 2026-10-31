@@ -1,0 +1,4 @@
+interface:
+  display_name: "Taste · 千星视觉方向"
+  short_description: "千星奇域 HTML 原型的美术方向、配色、构图与视觉参考"
+  default_prompt: "使用 $design-taste-frontend 的项目适配流程探索符合玩法和千星还原能力的视觉方向。"

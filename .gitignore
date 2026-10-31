@@ -6,4 +6,6 @@ dist/
 lua.deploy.local.json
 .lua-deploy-state.json
 .lua-deploy-backups/
+.taste-skill/
+.impeccable/
 *.log

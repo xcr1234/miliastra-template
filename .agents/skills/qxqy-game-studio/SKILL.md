@@ -34,6 +34,8 @@ description: 按策划案、TDD 测试用例、HTML 效果展示、千星美术�
 
 ## 决策与交接
 
+视觉设计与界面审查按项目 [设计指南](../../../docs/design-skills.md) 接入 Taste 与 Impeccable：步骤 3 探索/打磨 HTML，步骤 4 记录可还原的美术规范，步骤 6–7 依据实际平台画面评审。只在任务涉及视觉时读取相应入口，不以网页工具替代 Lua API、规则测试或真机证据。
+
 只在玩法语义、HTML 体验、真正不同的美术方向与真机结果需要用户判断时提问。实现细节、路径、断言和控件拆分自行处理，不反复问“是否继续”。
 
 以 `docs/production-plan.md` 记录当前步骤、退出证据、阻塞项；以 `records/playtest.md` 记录实际结果与来源。恢复与跨步骤回退规则见 [workflow.md](references/workflow.md)；阶段操作细节只在对应步骤文档维护。

@@ -72,3 +72,14 @@
 - 回归：`npm test` 28/28通过（新增6项），覆盖空模板、构建内容变化不改存档、拒绝内嵌源码且保留有效编辑、自定义产物路径、错误路径/缺失/空产物、Git忽略与新建文件发现，以及CLI成功/失败退出码。CLI集成初测发现 macOS临时目录别名导致入口未执行，改为比较真实路径后通过。此为工具回归，不当作玩法TDD Red。
 - 构建/检查：`npm run build:lua`成功，仍为2模块空生命周期产物；`npm run check:saves`为0存档/0问题；`git diff --check`通过。依赖按锁文件安装在项目内，npm缓存也在忽略的 `.local-tools/npm-cache`，未改全局环境。
 - 边界：本轮无新增客户端API，复用既有知识来源与已验证的模拟器“空source按path读取”机制；未启动Web或游戏Worker、未建立挂载、未复制到游戏目录、未验证真机。可独立运行的分享包需另带单文件Lua并保留相对路径。下一步仍为确定玩法后进入步骤1。
+
+## 2026-10-31：Taste 与 Impeccable 项目内接入
+
+- 本轮范围：用户要求将两个设计项目整合进模板。属于模板维护，保留既有策划与进度内容，没有推进游戏步骤。
+- 固定来源：Taste 2.1.5，提交 `12af471f627f866411b4bd785b19646d3672784c`；Impeccable Skill 4.8.0，提交 `df3a4abe7d0840d5f60324812c432e00b66a4e75`，引擎 0.1.18。完整配套资料/脚本安装在项目 `.agents/skills/`；原始入口、MIT/Apache 许可与第三方声明保留。105 个上游文件经 Git blob 核对后记录 LF 规范化 SHA-256，见 `.agents/design-skills.lock.json`。
+- 适配：新增千星入口与中文 UI 元数据；Taste 用于视觉方向，Impeccable 用于界面评审。AGENTS、README 与七步的 3/4/6/7 阶段已接入；复用 GDD、美术规范与试玩记录，不强制 PRODUCT/DESIGN，也不把网页风格、图片/动效数量或 DOM 检测作为千星验收门槛。评审默认单上下文并注明方法，上游引擎的初始化和代理授权提示不作为用户指令。
+- 执行入口：`design:taste`、`design:impeccable` 将历史、浏览器临时文件和引擎缓存定向到项目内；引擎下载和每次运行均核对固定 SHA-256，不使用用户全局引擎候选。未注册 hooks、live 注入或上游代理配置。引擎下载沿用宿主已有代理；无新 npm 依赖，Skill 校验用的 PyYAML 6.0.2 仅安装在被忽略的 `.local-tools/skill-validation/`。
+- 验证：初次 `npm test` **27 / 27 通过**，含 5 项设计工具测试，覆盖项目目录隔离、禁止安装/路径穿越、校验下载与离线缓存、损坏拒绝及无校验清单时不联网。推送前同步远端存档管理更新，保留两套测试与预览构建/存档检查流程，合并后 **33 / 33 通过**；`npm run check:saves` 为 0 存档 / 0 问题。三个相关 Skill 通过官方 quick_validate，两个 UI 元数据通过 YAML/长度检查；`npm run design:check` 验证 **105 个文件与 85 个本地链接**。
+- 命令 smoke：Taste 应用风格抽取成功；临时测试页的 inspect 在 1440/768/390 宽度生成 6 张截图，结果 0 FAIL、2 WARN（测试页留白/画布使用提示，不作为游戏设计验收）。Impeccable `engine-probe` 返回 `impeccable-engine 0.1.18`；context 可读取目标事实；`detect --json` 对仅本机访问的临时测试页返回 `[]`、退出 0。测试页和临时服务器仅用于工具接入，服务器已结束。
+- 环境差异：首次 Node 原生下载因未使用宿主代理超时，调整为项目已有 undici 的 EnvHttpProxyAgent 后下载、校验和探针通过。Taste 浏览器在沙箱内崩溃，在获宿主执行权限后原命令通过。回归测试进程的 TEMP/TMP 设到项目 `.local-tools/design-test-tmp/`，避免此前系统临时目录的 Windows rename 权限问题。
+- 验证边界与下一步：以上是模板工具、临时 HTML 页与静态资料验证；未操作游戏模拟器或存档，未运行游戏 runCase、未发布或真机验证。后续游戏按最早缺失证据的步骤继续，到步骤 3 再用本次接入的 Skill 制作和审查真实原型。使用、限制与固定版本更新见 [设计指南](design-skills.md)。

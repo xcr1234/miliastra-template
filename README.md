@@ -20,6 +20,20 @@
 
 已有项目从最早缺失证据的步骤继续，窄修复只处理受影响步骤。用户明确调整范围时按其要求执行；正常推进无需逐步重复确认。模拟器结果与真机结果分别记录。
 
+## 第 3–7 步：视觉设计与界面审查
+
+模板已附带项目内 [Taste](.agents/skills/design-taste-frontend/SKILL.md) 与 [Impeccable](.agents/skills/impeccable/SKILL.md)：Taste 用于 HTML 原型的视觉方向，Impeccable 用于菜单、HUD、背包、商店与结算界面的评审和打磨。第 4 步将接受的设计写入美术规范，第 6–7 步根据模拟器/真机画面复核。
+
+两者已适配游戏需求，复用 GDD、美术文档和试玩记录；网页风格禁令与图片/动效数量不作为游戏硬门槛。上游资料与脚本固定版本随仓库提交，首次使用无需全局安装。命令、适用边界、许可与更新见 [游戏设计工具指南](docs/design-skills.md)。
+
+```sh
+npm run design:check
+npm run design:taste -- draw --list directions
+npm run design:impeccable -- engine-probe
+```
+
+Impeccable 引擎首次按需下载到项目 `.local-tools/` 并核对 SHA-256；浏览器检查需要已安装 Chrome、Edge 或 Chromium。工具可读取、命令可运行与游戏视觉通过分别记录。
+
 ## 第 4 步：图片拟合
 
 - **方案一：Codex + `miliastra-image-css-builder` → 导入 CSS/JSON → 精修导出**，在线使用[千星图片编辑器](https://qx.070077.xyz/)，适合简单图标、几何装饰、UI 拼接和局部修改。
@@ -62,7 +76,8 @@ git clone https://github.com/xcr1234/miliastra-template.git E:/miliastra/my-game
 ## 开发、检查与预览
 
 ```text
-.agents/skills/                 千星服务端、Lua 知识库与七步开发流程
+.agents/skills/                 千星知识库、七步流程、Taste 与 Impeccable
+.agents/design-skills.lock.json 设计工具固定来源与原始文件 SHA-256
 .codex/config.template.toml     可提交的 MCP 配置模板
 src/main.lua                   生命周期入口
 src/app/lifecycle.lua           空的应用模块

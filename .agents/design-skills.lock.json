@@ -1,0 +1,656 @@
+{
+  "formatVersion": 1,
+  "hashNormalization": "lf",
+  "verifiedOn": "2026-10-31",
+  "timezone": "Asia/Shanghai",
+  "skills": [
+    {
+      "name": "design-taste-frontend",
+      "repository": "Leonxlnx/taste-skill",
+      "commit": "12af471f627f866411b4bd785b19646d3672784c",
+      "version": "2.1.5",
+      "directory": ".agents/skills/design-taste-frontend",
+      "files": [
+        {
+          "upstreamPath": "LICENSE",
+          "path": "LICENSE",
+          "gitBlob": "48a2f6640b81ff8eca9ce7f6a96337692713ef5b",
+          "sha256": "4575a543ab88dad12ccea7d97e563d0bce5b448b06072e65d3264497dad326df"
+        },
+        {
+          "upstreamPath": "skills/taste-skill/README.md",
+          "path": "README.md",
+          "gitBlob": "a98ba126ce373ba5e639560d8628834d5fa43347",
+          "sha256": "5e33fd716b3e1ffaca9340f645d44c193f9b446107fa67f0cce498d33025672c"
+        },
+        {
+          "upstreamPath": "skills/taste-skill/SKILL.md",
+          "path": "UPSTREAM-SKILL.md",
+          "gitBlob": "d8444f13b76be100b3b088dfdae738e85288d6b6",
+          "sha256": "3435ed963b15a1b6447746ec8844ab2cd38d8d2e8ead3451937f42df01e408c4"
+        },
+        {
+          "upstreamPath": "skills/taste-skill/assets/app.css",
+          "path": "assets/app.css",
+          "gitBlob": "865e4ed4804556aaff51897d22bf0c1bcbee9549",
+          "sha256": "16518c3a999fb81b2698137f1f743128c189272e8b1d411c4b02598c6755b67f"
+        },
+        {
+          "upstreamPath": "skills/taste-skill/assets/base.css",
+          "path": "assets/base.css",
+          "gitBlob": "75915d3b1ea8780090a365eabfb5c4b697cc6e86",
+          "sha256": "aa6ea21613c79e06e06dea3d33200c78590c89b0346bb976ec07947bb45ceafa"
+        },
+        {
+          "upstreamPath": "skills/taste-skill/assets/base.js",
+          "path": "assets/base.js",
+          "gitBlob": "86ec0afacba394f64db238c44b8e7b980f2383b3",
+          "sha256": "8d50416125596b84c0083d5d5ffba09add57db4b06cbf0eedac2d4999b7653bc"
+        },
+        {
+          "upstreamPath": "skills/taste-skill/assets/charts.js",
+          "path": "assets/charts.js",
+          "gitBlob": "8060404d133089930638804830e192218436eaa7",
+          "sha256": "a7e916594729576b7c7e37048a68508a3243fe8fbc9654775cd245232e9f8100"
+        },
+        {
+          "upstreamPath": "skills/taste-skill/assets/scenes/stage.css",
+          "path": "assets/scenes/stage.css",
+          "gitBlob": "190763d3c1661e7a602bec21fce952dece67bf15",
+          "sha256": "b5c587dac45ac6fcc34ae7cb4aa2b3e43797b2ef5d71fd32b48483bda3fca3e0"
+        },
+        {
+          "upstreamPath": "skills/taste-skill/assets/scenes/stage.js",
+          "path": "assets/scenes/stage.js",
+          "gitBlob": "315b1d9d2ec4b160979a904b13488ea7179b48e9",
+          "sha256": "9ce782a94406e6a230c49ca5f87e56aff9d436da3f56416b1659421f8976bc2b"
+        },
+        {
+          "upstreamPath": "skills/taste-skill/evals/evals.json",
+          "path": "evals/evals.json",
+          "gitBlob": "f6d598008f22d980d135a863a7a151609822bb3f",
+          "sha256": "df0ee2a248cd5445c0e1600eb095dc0d43dd312f5b4bb4316a78471ae0d22a74"
+        },
+        {
+          "upstreamPath": "skills/taste-skill/library/app.json",
+          "path": "library/app.json",
+          "gitBlob": "c06fb45f8bb6b09398f19ba35b2f71ae2363a310",
+          "sha256": "3678ccbe1e8d05feff6d4f07fa16a0d610aefeea5e697e842a876713ba763cf5"
+        },
+        {
+          "upstreamPath": "skills/taste-skill/library/directions.json",
+          "path": "library/directions.json",
+          "gitBlob": "f7f82e1a921e7009da7ce6f88410d2c8a94cf214",
+          "sha256": "d71e3824af33a92d9e1ca543e17f80baa5b7a30c815df5125cfe3300a14892c1"
+        },
+        {
+          "upstreamPath": "skills/taste-skill/library/heroes.json",
+          "path": "library/heroes.json",
+          "gitBlob": "74227d956a049f548d99f7b420ccc6218ae3c40e",
+          "sha256": "98d5e01104412a5fb27936f9c686f3bc0a5f76ce0793186d3de46b982c65b172"
+        },
+        {
+          "upstreamPath": "skills/taste-skill/library/motions.json",
+          "path": "library/motions.json",
+          "gitBlob": "ff3818f561f338b15dbe1ff45620729ef0ff8d3b",
+          "sha256": "51815dd09a823c829897f99ed9ea7dc5c35bd305ac989b8a0632ea6d42a3f08b"
+        },
+        {
+          "upstreamPath": "skills/taste-skill/library/palettes.json",
+          "path": "library/palettes.json",
+          "gitBlob": "9de29b16db9c9f57b977dd38648a47f866572e54",
+          "sha256": "a14be9f45baba848c53436f4aa44eb4f1925ad3e232c5d1dcddf4f565661a525"
+        },
+        {
+          "upstreamPath": "skills/taste-skill/library/photos.json",
+          "path": "library/photos.json",
+          "gitBlob": "f403b772d3d6ae11ef07cfe44514fb019d918820",
+          "sha256": "8fc3b76bca90f44675bd99d99bb4ce95b0756c6c5d4141b7e917d11d90e61520"
+        },
+        {
+          "upstreamPath": "skills/taste-skill/library/sections.json",
+          "path": "library/sections.json",
+          "gitBlob": "042b8ab18ef1aa6e67a6f0f2c171fa9357528623",
+          "sha256": "7c2c8a470a22501176948661f803434db8c542a511281752c717252de80c1ad8"
+        },
+        {
+          "upstreamPath": "skills/taste-skill/library/sites.json",
+          "path": "library/sites.json",
+          "gitBlob": "ef070e3ccdf5cb9c388bab1fd0aacb0371cba413",
+          "sha256": "a2bc4d0cff8ebff481f0dfd4879c106d5e1e16cb3122f9ab3702184a5e1f3502"
+        },
+        {
+          "upstreamPath": "skills/taste-skill/library/type.json",
+          "path": "library/type.json",
+          "gitBlob": "f2a9e6ee47774029dd50fa2856cf963d4e69352f",
+          "sha256": "dbabf41a468775cf6cc5ea5f3c898b0663293822e167b72b02feba1ef03ebf37"
+        },
+        {
+          "upstreamPath": "skills/taste-skill/references/app-screens.md",
+          "path": "references/app-screens.md",
+          "gitBlob": "784439ed799484a98958764a5bf3ede2a1d25296",
+          "sha256": "55e937ec30de605b53a11310b446f328a3ce7403de24fff008920a00be1a5ed4"
+        },
+        {
+          "upstreamPath": "skills/taste-skill/references/colour.md",
+          "path": "references/colour.md",
+          "gitBlob": "a20a810fa1f080414035a5e0fdc5002977e56ab2",
+          "sha256": "6556bcc7eed48b7bc2d0d281c28bf57c1b75e94d7ca0bde49f5d9df8c6a09351"
+        },
+        {
+          "upstreamPath": "skills/taste-skill/references/copy.md",
+          "path": "references/copy.md",
+          "gitBlob": "69f20af2bff6d40cc07d4dcadaa45440ced550bf",
+          "sha256": "676edbe75d5f3cfd8a793010ea9f730525ae074b231a674c2426264d3398262e"
+        },
+        {
+          "upstreamPath": "skills/taste-skill/references/critique.md",
+          "path": "references/critique.md",
+          "gitBlob": "1989a85c83232e86aec66baf733a843947392b37",
+          "sha256": "9c2f4392674530b3f02ac529fba53d82ab37b85f401c4c1989fbe98d6217f0b4"
+        },
+        {
+          "upstreamPath": "skills/taste-skill/references/imagery.md",
+          "path": "references/imagery.md",
+          "gitBlob": "ddd88d7a31dd3a5d7f4675ead4524f34d037f665",
+          "sha256": "518def6b2c643b295e13e66b09b66f2e3fc1421d3cf6c7dbb1dc749097ad2ad9"
+        },
+        {
+          "upstreamPath": "skills/taste-skill/references/layout.md",
+          "path": "references/layout.md",
+          "gitBlob": "dae26af173b4b60f96291f816700f390ffd8e37e",
+          "sha256": "40080640719b07737afb94a8868afef87767a1ab4892814d9b6882e2d283453b"
+        },
+        {
+          "upstreamPath": "skills/taste-skill/references/motion.md",
+          "path": "references/motion.md",
+          "gitBlob": "c8f649d4fa45c369c53ce375a00d2f125182f181",
+          "sha256": "79f94d8469898d2bf6186c198ad86ddf691a67c6536eaec36a4ec101285d9a37"
+        },
+        {
+          "upstreamPath": "skills/taste-skill/references/research.md",
+          "path": "references/research.md",
+          "gitBlob": "c38364af48f9e95dc90a2e6b47ae75ffdc24731e",
+          "sha256": "83433646a352cae588591e05bc0a75fe1deadff55ede8851bc8dd5dd483adfc5"
+        },
+        {
+          "upstreamPath": "skills/taste-skill/references/scenes.md",
+          "path": "references/scenes.md",
+          "gitBlob": "c2c568b5f1d18128658b28a273e90028fc22bb30",
+          "sha256": "733ac7258a1a28f2f6ae8205bc36ba66c563594ad0a2e2f829c5eaaba3199a61"
+        },
+        {
+          "upstreamPath": "skills/taste-skill/references/tells.md",
+          "path": "references/tells.md",
+          "gitBlob": "9cfa4a89e466eb6df81b7a1b776421c378aad840",
+          "sha256": "8e6de4411c43d3108f832b3f33bb1a2a838148a72b92a176df893b67d99a0da9"
+        },
+        {
+          "upstreamPath": "skills/taste-skill/references/type.md",
+          "path": "references/type.md",
+          "gitBlob": "c1552b700e9bebb2fedf79f82c875615d0f876ac",
+          "sha256": "6353ff1d0ce2f9913628c88fbcb7dad3cc3877e61196848bce99e33a17d20611"
+        },
+        {
+          "upstreamPath": "skills/taste-skill/scripts/assets.mjs",
+          "path": "scripts/assets.mjs",
+          "gitBlob": "4f9c5b1c1fcc5a821685c5cea35f326bcf15d75b",
+          "sha256": "b4b4b99b5634735f5a0b4213169cda5240ee6bbed8ed8042ad1bcf2b6607c1fa"
+        },
+        {
+          "upstreamPath": "skills/taste-skill/scripts/draw.mjs",
+          "path": "scripts/draw.mjs",
+          "gitBlob": "6db3d89422057902457c97643c13f4b351d1459b",
+          "sha256": "6c2047d207d2400d3b099956dfe2ac306203b614246e66bc8760212a7f797dbf"
+        },
+        {
+          "upstreamPath": "skills/taste-skill/scripts/inspect.mjs",
+          "path": "scripts/inspect.mjs",
+          "gitBlob": "f1790ca0f1a7c26221455c4e1e91e69e16363dff",
+          "sha256": "c0d7366f789b3f594787b37a525d1d7096104a499aac8a97ae04b405046cf02c"
+        },
+        {
+          "upstreamPath": "skills/taste-skill/scripts/lib/app-draw.mjs",
+          "path": "scripts/lib/app-draw.mjs",
+          "gitBlob": "e246a38f15d4f3b163a3d3aa5378c71462a4c24f",
+          "sha256": "aa0802d341d19b53ec14ec21746e428be49a8ec3ed7b30253194105fc18a8df6"
+        },
+        {
+          "upstreamPath": "skills/taste-skill/scripts/lib/cdp.mjs",
+          "path": "scripts/lib/cdp.mjs",
+          "gitBlob": "03ef99c144923d0905ffc6222189bc8901836f4a",
+          "sha256": "320fb75c6454a97b88458e5c33559a1188042aa0041bd5eff53455900236c88a"
+        },
+        {
+          "upstreamPath": "skills/taste-skill/scripts/lib/inspection-files.mjs",
+          "path": "scripts/lib/inspection-files.mjs",
+          "gitBlob": "d375fcb6b1db149eb11b9ccde3d2f485060b51ca",
+          "sha256": "5635c0d5fbe0f5bd012e58534bcd554ff7440a4e5c724a61a61c476c7f42e918"
+        },
+        {
+          "upstreamPath": "skills/taste-skill/scripts/lib/probe.mjs",
+          "path": "scripts/lib/probe.mjs",
+          "gitBlob": "d45372bc2f594e2ab674889646ca6fc846cec6b8",
+          "sha256": "a5a17df891e438f55f196d8233601c3c79c873755f442c1ac5c3568de4e6bb48"
+        },
+        {
+          "upstreamPath": "skills/taste-skill/scripts/lib/rules.mjs",
+          "path": "scripts/lib/rules.mjs",
+          "gitBlob": "daf22a9cd2fe19339796f406aca6aa9a24872a96",
+          "sha256": "8244aa9f53e77a59a562410310414e6b1a0f0cf002ce8f5aa792740b7f0149bf"
+        },
+        {
+          "upstreamPath": "skills/taste-skill/scripts/lint.mjs",
+          "path": "scripts/lint.mjs",
+          "gitBlob": "9277761d18222e5fc75c85ed79aa032f3d086598",
+          "sha256": "05f2fae2f56fc051b539cdbacb43a6f78fbbfb9644bb74aa11be472ff12dcaf5"
+        },
+        {
+          "upstreamPath": "skills/taste-skill/scripts/scenes.mjs",
+          "path": "scripts/scenes.mjs",
+          "gitBlob": "7bbde8e6bdf27859af0d54db1e1b2756de3a7d56",
+          "sha256": "234ec582e2b841457c33033feeeba8535f9ac285495a74d08dc533a1566c90d5"
+        }
+      ]
+    },
+    {
+      "name": "impeccable",
+      "repository": "pbakaus/impeccable",
+      "commit": "df3a4abe7d0840d5f60324812c432e00b66a4e75",
+      "version": "4.8.0",
+      "directory": ".agents/skills/impeccable",
+      "files": [
+        {
+          "upstreamPath": ".agents/skills/impeccable/SKILL.md",
+          "path": "UPSTREAM-SKILL.md",
+          "gitBlob": "c0dd2530c9968963b1f63bf50b227c4a33996e3b",
+          "sha256": "fab04b31f946573b00a8559db1fc070f8ea5825254d491c2b13156e5661a86d7"
+        },
+        {
+          "upstreamPath": ".agents/skills/impeccable/agents/impeccable_asset_producer.toml",
+          "path": "agents/impeccable_asset_producer.toml",
+          "gitBlob": "91eeca4cce0e62881149b094e758f814510649c3",
+          "sha256": "4dbdb0cfdc2466961da6b22d200f3ec7bf8bb47c27448a2e6e3c03cdbf589831"
+        },
+        {
+          "upstreamPath": ".agents/skills/impeccable/agents/impeccable_documenter.toml",
+          "path": "agents/impeccable_documenter.toml",
+          "gitBlob": "45203ec73dc5d2509d0bd4f13e0eccbe51b4366e",
+          "sha256": "2feb3768125ba6469c92a50d516727e6d42f44579165ddfd33409948e2a3803d"
+        },
+        {
+          "upstreamPath": ".agents/skills/impeccable/agents/impeccable_finish_reviewer.toml",
+          "path": "agents/impeccable_finish_reviewer.toml",
+          "gitBlob": "124b0c4e4418308288b731f78d134e28093ade33",
+          "sha256": "1b80232e22d52b06a7278b9ca1f24f871a181c62cd91f4b18728807e7cf49dbd"
+        },
+        {
+          "upstreamPath": ".agents/skills/impeccable/agents/impeccable_manual_edit_applier.toml",
+          "path": "agents/impeccable_manual_edit_applier.toml",
+          "gitBlob": "ae18e0742b1d0a2ca0d950407e53c36294ce2af2",
+          "sha256": "4b01f4eb8a49fb00bc88248735c3b5442beb1791ec71d98e6d203f268a24010b"
+        },
+        {
+          "upstreamPath": ".agents/skills/impeccable/agents/openai.yaml",
+          "path": "agents/openai.upstream.yaml",
+          "gitBlob": "e86d8a955ee9527dc9acfa70ded41f8c54aea435",
+          "sha256": "ce9967ad70f99cf04456f3347c266723c2fbbb600267d10a822b7cd20562c321"
+        },
+        {
+          "upstreamPath": ".agents/skills/impeccable/reference/adapt.md",
+          "path": "reference/adapt.md",
+          "gitBlob": "de4631d7e8f14b3c193175b87302b6ccc814e34c",
+          "sha256": "9807cdc112b8bcbdeff9cd2516cda4d07129f1d47f29df4d57645344f34950c1"
+        },
+        {
+          "upstreamPath": ".agents/skills/impeccable/reference/adapt.native.md",
+          "path": "reference/adapt.native.md",
+          "gitBlob": "435c40a6f416809d88cef92c09f0331c65fddec8",
+          "sha256": "2455a2613e1fa29b986521c73cbad9424ccda70ef6cbe505779dbca5e16272a2"
+        },
+        {
+          "upstreamPath": ".agents/skills/impeccable/reference/android.md",
+          "path": "reference/android.md",
+          "gitBlob": "32a5cf7ccfd78afe659f10f80cca6bbb3ef7de69",
+          "sha256": "43780abcf10ac12a569d98001ae38af2b337727a0f7ce66268246ac1d54b5d34"
+        },
+        {
+          "upstreamPath": ".agents/skills/impeccable/reference/animate.md",
+          "path": "reference/animate.md",
+          "gitBlob": "c8fb9e038bb74a125646b64c49bc39711f63e8f4",
+          "sha256": "d658c48ffbe0031e8e3b318996cad6ceafe29e40aa50d5bb25e4bf1d6839dc7c"
+        },
+        {
+          "upstreamPath": ".agents/skills/impeccable/reference/audit.md",
+          "path": "reference/audit.md",
+          "gitBlob": "13bf0d7c71802a48af4863c08ee3ed898f72c4b2",
+          "sha256": "5ba9e3a090fc4c4d212c8cbfa5a48f7454ceb10fa81a284b4a7b4e8351ece2f1"
+        },
+        {
+          "upstreamPath": ".agents/skills/impeccable/reference/audit.native.md",
+          "path": "reference/audit.native.md",
+          "gitBlob": "af725765fb65a02375815060fe825da390f2d051",
+          "sha256": "2898eff507738f9102107809e671df3e69f889dee30073030fe96fb2483d8ea3"
+        },
+        {
+          "upstreamPath": ".agents/skills/impeccable/reference/bolder.md",
+          "path": "reference/bolder.md",
+          "gitBlob": "c11a146b502cb46f6d5ad3f11ba0f6ff75c0e4d7",
+          "sha256": "05b78fb0595e4d5afbf5f17470c84e89cf82f205fea3a6e9b6d8d779b7c4aab1"
+        },
+        {
+          "upstreamPath": ".agents/skills/impeccable/reference/clarify.md",
+          "path": "reference/clarify.md",
+          "gitBlob": "4506a31c95e02b2ad918367a0ef4461643d51532",
+          "sha256": "173dd66abe65633910dcb04a51f40d6ff2a793f87088f022a02fc4cad24dd133"
+        },
+        {
+          "upstreamPath": ".agents/skills/impeccable/reference/colorize.md",
+          "path": "reference/colorize.md",
+          "gitBlob": "02fa661efac9229d6e869a20ef8ee928d4b986a0",
+          "sha256": "bc5f71f1129d0f2c310d913d07c8dc609a1d25644121bd78c308f42d52a0b9e9"
+        },
+        {
+          "upstreamPath": ".agents/skills/impeccable/reference/component-review.md",
+          "path": "reference/component-review.md",
+          "gitBlob": "a3c35c92999ecde66f53c96fb287d8adaa0e17f3",
+          "sha256": "10489e5265e49a4ef2737cd0e674c149ed41e1f703efe922e53ea3c91e833427"
+        },
+        {
+          "upstreamPath": ".agents/skills/impeccable/reference/craft-floor.md",
+          "path": "reference/craft-floor.md",
+          "gitBlob": "fd7280103f7ef4b009b38ce58f594c44c0f04caa",
+          "sha256": "808a50e0e6c74617a07b0eaf7fd80f58d8e48a13f48e47c658c7534b1724e5c2"
+        },
+        {
+          "upstreamPath": ".agents/skills/impeccable/reference/craft.md",
+          "path": "reference/craft.md",
+          "gitBlob": "dbbc9402c07cdab21f2b6eb69279b8435fecfd7f",
+          "sha256": "9205e222bc6565b37fb504ceec93233c2d2a456802b69d16e6b1c44723907c4c"
+        },
+        {
+          "upstreamPath": ".agents/skills/impeccable/reference/critique.md",
+          "path": "reference/critique.md",
+          "gitBlob": "07ae4a854ede894de3320f42e50743c1ab4681fb",
+          "sha256": "c210c9506877c6c8d88880a337fddd95d4315daf70ed6bc631ee6520481f1a0c"
+        },
+        {
+          "upstreamPath": ".agents/skills/impeccable/reference/degraded/asset-producer.md",
+          "path": "reference/degraded/asset-producer.md",
+          "gitBlob": "76f2357b8aaec59fcb77dbc87582e235c3fcb365",
+          "sha256": "877d274f41500c780bad25b2bca7fa95eff1a32a7b95397dd388c72848e86a6c"
+        },
+        {
+          "upstreamPath": ".agents/skills/impeccable/reference/degraded/documenter.md",
+          "path": "reference/degraded/documenter.md",
+          "gitBlob": "e9dfb799bcece32233386bf9702bc3141d56d196",
+          "sha256": "bcc05ea92faebb5c74037a9d4263a5ce9a56f5ab07c8ab3c59ee704d8cade745"
+        },
+        {
+          "upstreamPath": ".agents/skills/impeccable/reference/degraded/finish-reviewer.md",
+          "path": "reference/degraded/finish-reviewer.md",
+          "gitBlob": "06f257d4a97ec7a19726e9b8eea702592bc0fdf8",
+          "sha256": "c33c4cfa7f0ce0bedde80d4fc3b595e747d0e9b43a77f06cacb8e899802f709d"
+        },
+        {
+          "upstreamPath": ".agents/skills/impeccable/reference/degraded/manual-edit-applier.md",
+          "path": "reference/degraded/manual-edit-applier.md",
+          "gitBlob": "2bb6b4f309a8a7b11c2c9681f8f8c0718f6b74e7",
+          "sha256": "cf9048c15e1b0935d8b38be54c4d21f77cce60e7c1ef28a6d9bab4b008977c4b"
+        },
+        {
+          "upstreamPath": ".agents/skills/impeccable/reference/delight.md",
+          "path": "reference/delight.md",
+          "gitBlob": "60a8e83ee48d50901acfa886d3ec4bc72b40ec6f",
+          "sha256": "098a891028ce59c212b747d3c70468dd750aff7053a703d1336045ed31e0da7c"
+        },
+        {
+          "upstreamPath": ".agents/skills/impeccable/reference/distill.md",
+          "path": "reference/distill.md",
+          "gitBlob": "2537473ced43e94d5081b61fdced2a4ff602c885",
+          "sha256": "8b9283510e38f0d190652f300ea0793acfb5a514b38b991fdc0a289bade83391"
+        },
+        {
+          "upstreamPath": ".agents/skills/impeccable/reference/doctor.md",
+          "path": "reference/doctor.md",
+          "gitBlob": "6d680a49f238e891fb0af054d0d1899104b3528f",
+          "sha256": "33aff200de6f76a74b333d7ae4f7d2f4fc2a0da4c1a57264567d88eb8f33b52b"
+        },
+        {
+          "upstreamPath": ".agents/skills/impeccable/reference/document.md",
+          "path": "reference/document.md",
+          "gitBlob": "45721a6f0aabedaa48a7b05a29c2025e6b52dbc2",
+          "sha256": "7e7e97388cac7b5af7afa5b6fec19a6576c89ce6a998c973cb007b8e5494a8c9"
+        },
+        {
+          "upstreamPath": ".agents/skills/impeccable/reference/extract.md",
+          "path": "reference/extract.md",
+          "gitBlob": "7c9d009c5a573dd15332b4431f6f0044374d25b7",
+          "sha256": "5477ae97189e5c1236cee71a25a5ae50014429a5a2e6da28355c8021a6cdeddd"
+        },
+        {
+          "upstreamPath": ".agents/skills/impeccable/reference/generate.md",
+          "path": "reference/generate.md",
+          "gitBlob": "7fe7a49886003677fdecad79a528f368b13d7f0f",
+          "sha256": "11385badfb532196cec249e73bac2b7f58ada033ed8c4b02b9f0d64ddb46f0dc"
+        },
+        {
+          "upstreamPath": ".agents/skills/impeccable/reference/harden.md",
+          "path": "reference/harden.md",
+          "gitBlob": "894f06127525ae2d802e4d73c345031e6076a68f",
+          "sha256": "4167eb7fc456cdfe09ff0ac2dbcb5e59cee57e590137aab6cc8ec08aafb6d775"
+        },
+        {
+          "upstreamPath": ".agents/skills/impeccable/reference/hooks.md",
+          "path": "reference/hooks.md",
+          "gitBlob": "6d6679153689ab3c7d08b2a9cac23c9b1a4c2917",
+          "sha256": "ed38f149e04740707942465a2b2c75851b773fd52a2b52132c2a8e7f4b07f9dc"
+        },
+        {
+          "upstreamPath": ".agents/skills/impeccable/reference/init.md",
+          "path": "reference/init.md",
+          "gitBlob": "fe5422cc811fb8c93989dc9a4ec7b24afbc91a69",
+          "sha256": "51349b3a32c7f907102dd680d8e2df9da27082caf46ee15c673be7ce14a5363b"
+        },
+        {
+          "upstreamPath": ".agents/skills/impeccable/reference/ios.md",
+          "path": "reference/ios.md",
+          "gitBlob": "c6244dfe32176e5718d86211b7d1eb5601eb0860",
+          "sha256": "40c87038b5f75147a5952a96237acf312a327bf70c1bcd8e0a5f064625ae9668"
+        },
+        {
+          "upstreamPath": ".agents/skills/impeccable/reference/layout.md",
+          "path": "reference/layout.md",
+          "gitBlob": "aa547c742fc373bc459bdbb7977683441aa48ec0",
+          "sha256": "0bc7d7971b3edf2acd0580e847458dc6d84129d90715b452799ace3bed815c7c"
+        },
+        {
+          "upstreamPath": ".agents/skills/impeccable/reference/live-setup.md",
+          "path": "reference/live-setup.md",
+          "gitBlob": "6e10f00f7f2a789da582f38cdaef89de39ead266",
+          "sha256": "2b5b2fbf5f658f34ea1997fb1aeebe01604d05187f75c6a4f1f55a5bc78520a4"
+        },
+        {
+          "upstreamPath": ".agents/skills/impeccable/reference/live.md",
+          "path": "reference/live.md",
+          "gitBlob": "045a3fb385552c55805fec252ae73ddeba9fc15b",
+          "sha256": "8735aa99406752a1d4bf903051ee9e9e6e3be1f4821c044b1f63d2a0556a6935"
+        },
+        {
+          "upstreamPath": ".agents/skills/impeccable/reference/mode-operate.md",
+          "path": "reference/mode-operate.md",
+          "gitBlob": "833775ba85f03bf65a4c1b23e39192f7653414e6",
+          "sha256": "7a52dd7a94ee75f6ae89542c86a1b6e1d306812b16e0d9dbf12d4acad44d148b"
+        },
+        {
+          "upstreamPath": ".agents/skills/impeccable/reference/mode-persuade.md",
+          "path": "reference/mode-persuade.md",
+          "gitBlob": "9c152d67064fb8453a7eaa89de20c35fc115b085",
+          "sha256": "21e78c8a77badb3f83290cd4577ed3b24bd4dd3b57136d7da75733d4f3ee9ac0"
+        },
+        {
+          "upstreamPath": ".agents/skills/impeccable/reference/mode-read.md",
+          "path": "reference/mode-read.md",
+          "gitBlob": "b30c4c9139e3094bd35c60738decb6109326153f",
+          "sha256": "a569989e6a3d6453b4c45e9474e162a15cc54e11732ac6baa7990a6e7cccc0b5"
+        },
+        {
+          "upstreamPath": ".agents/skills/impeccable/reference/new-work.md",
+          "path": "reference/new-work.md",
+          "gitBlob": "e39cd6a358a40a7db28de36a52b6f27139d22be3",
+          "sha256": "e23f8944f8962a36dc01e1b0bfacc55bb754633b3686e83ae53a40af97444118"
+        },
+        {
+          "upstreamPath": ".agents/skills/impeccable/reference/onboard.md",
+          "path": "reference/onboard.md",
+          "gitBlob": "f2e1c15af24976fbddb6770719fae66172268ff4",
+          "sha256": "a2b8fd01ea12139b39b3285393f805bb8c326e11b2234dbff4c26c17b4e9c280"
+        },
+        {
+          "upstreamPath": ".agents/skills/impeccable/reference/operate.md",
+          "path": "reference/operate.md",
+          "gitBlob": "524f2c3ae9fa497284e9699f3ca5320cce5d05cf",
+          "sha256": "a9d2203acd45ca33a13d5c68b02b23ed512425ac15f0e8438318ed124b43729d"
+        },
+        {
+          "upstreamPath": ".agents/skills/impeccable/reference/optimize.md",
+          "path": "reference/optimize.md",
+          "gitBlob": "a4e55099ff738571c1fc46c66f27b015dc05339e",
+          "sha256": "092c85e5a644e6e528aaff0f341ee1ed57e012c195162fef0a5fc97605f9bb73"
+        },
+        {
+          "upstreamPath": ".agents/skills/impeccable/reference/overdrive.md",
+          "path": "reference/overdrive.md",
+          "gitBlob": "9f8fc8eec3b07156b670a2561d1f74c17ccdd9f2",
+          "sha256": "0a0d4ae6eea720c6d6e1c073fc77192d7c2100f78a44d9a8d262ddf22270cf4d"
+        },
+        {
+          "upstreamPath": ".agents/skills/impeccable/reference/polish.md",
+          "path": "reference/polish.md",
+          "gitBlob": "f93170f773cac058f51e289603aed7575d62a6a2",
+          "sha256": "81666fc7f783b4e3514db6554e713dc0479bd9cdedb06e93d15f8b579aae869a"
+        },
+        {
+          "upstreamPath": ".agents/skills/impeccable/reference/quieter.md",
+          "path": "reference/quieter.md",
+          "gitBlob": "61ea5c7027b54ef7354f55d591b6df8e1fc11dd8",
+          "sha256": "9e03b55c6bbdd4acba28cfa9c3b74ba1a4448cdbd35a7200990ab460c6eecaa0"
+        },
+        {
+          "upstreamPath": ".agents/skills/impeccable/reference/region-map.md",
+          "path": "reference/region-map.md",
+          "gitBlob": "7b7685cf59a7ee8fa9361d4f0b986ec0ba5b48ad",
+          "sha256": "778cedc9199b407d3e23fa1041e38d548b00b1101a33517aa2a2eb299f9d0edc"
+        },
+        {
+          "upstreamPath": ".agents/skills/impeccable/reference/routing.md",
+          "path": "reference/routing.md",
+          "gitBlob": "21c12a626e7ef084fa6ed5d03b93b91e3eb122ce",
+          "sha256": "77ae09542fbc10aa4e8b119d6fd19359908a47c13c30068d6a150bfdb50e3e10"
+        },
+        {
+          "upstreamPath": ".agents/skills/impeccable/reference/shape.md",
+          "path": "reference/shape.md",
+          "gitBlob": "90a74ae813331cbce8fff6beb498ced77970fadf",
+          "sha256": "a55f016c046cb6a27c55bd7f346375aeb506a755c4fbca19a5f92dbd42309c23"
+        },
+        {
+          "upstreamPath": ".agents/skills/impeccable/reference/typeset.md",
+          "path": "reference/typeset.md",
+          "gitBlob": "683175632928ab5566e517ad6128a07166e095e8",
+          "sha256": "c26c5b4524f3ccb650ed0680c10c25fd18083f8ebfd00a54c4d983c4747aab70"
+        },
+        {
+          "upstreamPath": ".agents/skills/impeccable/reference/visualize.md",
+          "path": "reference/visualize.md",
+          "gitBlob": "afb44acced4f2a39de7cbeb200b47d4dcf89486f",
+          "sha256": "0c431d0dafbcac7ae8bde70ffa622f9ee542c44ec12e14b48bb44b269bef67eb"
+        },
+        {
+          "upstreamPath": ".agents/skills/impeccable/scripts/VERSION",
+          "path": "scripts/VERSION",
+          "gitBlob": "f8bc4c6256ab7d4bb54c2ab7af94c4fa5e58ac56",
+          "sha256": "447836d46f39c5900faf74ad6a6554b8e1fafeca1f78de0416d5f05c6e09a080"
+        },
+        {
+          "upstreamPath": ".agents/skills/impeccable/scripts/command-metadata.json",
+          "path": "scripts/command-metadata.json",
+          "gitBlob": "4686bb6deea643493198bff1369bc2958b3909a7",
+          "sha256": "c6dcbeed7f13152205ca022c8f24d08683770835083f0a7325261c1c2d5f215c"
+        },
+        {
+          "upstreamPath": ".agents/skills/impeccable/scripts/data/font-index-failures.json",
+          "path": "scripts/data/font-index-failures.json",
+          "gitBlob": "1aca67220413ef163570c75405b444d7a27a32be",
+          "sha256": "835f19a0a3812f3652dd6979a2ce5597f654fd01f26e1b420b92d5f42b997ce4"
+        },
+        {
+          "upstreamPath": ".agents/skills/impeccable/scripts/data/font-index.json",
+          "path": "scripts/data/font-index.json",
+          "gitBlob": "9d2029971df232a72ff6584d264c104490521742",
+          "sha256": "47edbdfaf27073c47033d1ac7dfee881be49e2dcbda7671d1157300481dde6da"
+        },
+        {
+          "upstreamPath": ".agents/skills/impeccable/scripts/engine-checksums.txt",
+          "path": "scripts/engine-checksums.txt",
+          "gitBlob": "2e948006a8ac3cb811b775f88b131def849f2237",
+          "sha256": "2f0235179cbc515d7c7ec71a9a08283d0cb88a5238d35ffa5a5f42122e78fe35"
+        },
+        {
+          "upstreamPath": ".agents/skills/impeccable/scripts/impeccable",
+          "path": "scripts/impeccable",
+          "gitBlob": "b71d89311251758a3d165e084c877e7802bcc7e6",
+          "sha256": "e91b8a68fe2595120fa4452ff1888d7a5216557f4bdaa93c537153c739de25c2"
+        },
+        {
+          "upstreamPath": ".agents/skills/impeccable/scripts/impeccable.cmd",
+          "path": "scripts/impeccable.cmd",
+          "gitBlob": "6157693b75c837249060089f2240b363d38e8023",
+          "sha256": "96a9281207f81c6974a552b9538cdd3ac7d5005a3baf7eeddeb3556f86cae9a6"
+        },
+        {
+          "upstreamPath": ".agents/skills/impeccable/scripts/live-browser-dom.js",
+          "path": "scripts/live-browser-dom.js",
+          "gitBlob": "ef1ca8928111080ddb923da14c7827b7396a9e62",
+          "sha256": "4b379aff87ce0f485008a2b6a0dc711d00a869f5cf0ec2459279d6364fbf0c9e"
+        },
+        {
+          "upstreamPath": ".agents/skills/impeccable/scripts/live-browser-ignores.js",
+          "path": "scripts/live-browser-ignores.js",
+          "gitBlob": "1a2912e57a3b2b10a0d961b5dfe568253133fe53",
+          "sha256": "ba8905ab865fde5162e34fc17eb80eba26cc990b319b14a6eed6ca89fd491897"
+        },
+        {
+          "upstreamPath": ".agents/skills/impeccable/scripts/live-browser-session.js",
+          "path": "scripts/live-browser-session.js",
+          "gitBlob": "6871770720d3dd7a284c545e20b97b613635f36f",
+          "sha256": "e042339a54d4521fc47555b602013ed5b51410ec9d7d8878d99a526f5f237f68"
+        },
+        {
+          "upstreamPath": ".agents/skills/impeccable/scripts/live-browser.js",
+          "path": "scripts/live-browser.js",
+          "gitBlob": "1c140fa0ea49162c4e42c3c96a332f751e0667ca",
+          "sha256": "3beaec74d362b64fd32656b22e3bd09f3b983ed2b3068625475dbe46b6867ed9"
+        },
+        {
+          "upstreamPath": ".agents/skills/impeccable/scripts/modern-screenshot.umd.js",
+          "path": "scripts/modern-screenshot.umd.js",
+          "gitBlob": "a9c5208f6b141d3bafdb8eb843d6fcbdcf23e370",
+          "sha256": "bb36665889124a0b6e15f16045265737449c3bdcf2712cdb08af3cfa01563e2b"
+        },
+        {
+          "upstreamPath": "LICENSE",
+          "path": "LICENSE",
+          "gitBlob": "bb3f6d23b1f8025514a62a12b51b47d73e3c9aa9",
+          "sha256": "02bb8c3b4e70190e3986c0404ad2fd8d639b4f534252d82379cc1b502b6d1812"
+        },
+        {
+          "upstreamPath": "NOTICE.md",
+          "path": "NOTICE.md",
+          "gitBlob": "0468271c904ae334cfaf27da6f8df3d5f419a1f0",
+          "sha256": "c60a093c2845fd9fb82f9c6f742ece31f379f8190b535309d32d66c45ccffdcb"
+        }
+      ]
+    }
+  ]
+}
