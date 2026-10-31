@@ -1,31 +1,28 @@
-# 工具来源
+# 工具来源与版本
 
-- 视觉设计与界面审查：项目内附带 [Taste](../.agents/skills/design-taste-frontend/provenance.md) 2.1.5（MIT，固定提交 `12af471f627f866411b4bd785b19646d3672784c`）与 [Impeccable](../.agents/skills/impeccable/provenance.md) 4.8.0（Apache-2.0，固定提交 `df3a4abe7d0840d5f60324812c432e00b66a4e75`），接入日期 2026-10-31（Asia/Shanghai）。原始入口、配套文件、LICENSE/NOTICE 与 SHA-256 均保留；千星入口、单上下文评审及本地缓存包装属于模板适配。使用与更新见 [设计指南](design-skills.md)。
+本页维护当前版本的来源。许可证范围见 [THIRD_PARTY_NOTICES.md](../THIRD_PARTY_NOTICES.md)；开发过程中的旧版来源核对保留在生产记录中，不表示旧版复制文件仍随当前模板分发。
 
-- 模拟器与 Web 编辑器：`beyond-simulator-mcp@0.4.1`、`beyond-simulator-web@0.4.1`，来源 [miliastra-beyond-simulator](https://github.com/1475505/miliastra-beyond-simulator)。
-- `qxqy-game-studio` 工作流以模拟器仓库提交 `2c5a012eeee06ce52324655d5b988393eb8f46f5` 为基础，已按本模板的模块化源码、单文件构建与用户指定路径发布流程调整。
-- 节点图/Lua 知识库 Skill 以 [Miliastra-toolbox](https://github.com/1475505/Miliastra-toolbox) 的原版为基础；固定提交、配套参考和本地适配见下节。`tools/miliastra-toolbox-mcp.mjs` 是本项目的 HTTP → stdio MCP 适配器，不需要安装 Harness 插件。
-- 其余直接依赖锁定为 `@modelcontextprotocol/sdk@1.32.1`、`fengari@0.1.5`、`undici@8.11.2`、`zod@4.6.6`。完整依赖与完整性哈希记录在 `package-lock.json`；第三方许可见安装包对应的 LICENSE。
-- 模板自己的初始化、Lua 打包、复制发布工具从本地千星项目整理而来，不需要运行 DSH 或全局安装 npm 工具。
-- 图片编辑器：[在线服务](https://qx.070077.xyz/)、[源码仓库](https://github.com/1475505/Miliastra-image-editor-webui)。项目内已附带 `miliastra-image-css-builder@1.0.13`，固定上游提交 `cd4e08accc63f19774f844f38ad9b9c8dc2d3b79`；来源、原始许可声明与本地调整见 [Skill 来源记录](../.agents/skills/miliastra-image-css-builder/references/provenance.md)。自动图元拟合：[在线服务](https://qx-img.070077.xyz/)、[源码仓库](https://github.com/1475505/Miliastra-toolbox-primitive-shape)。在线入口由用户提供，流程与本地部署根据上游文档整理；两个图片服务本体未安装，按需在线使用或本地部署，见 [图片拟合指南](image-fitting.md)。
+## 随仓库分发的第三方 Skill
 
-## 知识库 Skill 来源与适配
+| 目录 | 上游与固定提交 | 许可与适配 |
+|---|---|---|
+| `qxqy-game-studio` | [miliastra-beyond-simulator](https://github.com/1475505/miliastra-beyond-simulator/tree/2c5a012eeee06ce52324655d5b988393eb8f46f5)，`2c5a012eeee06ce52324655d5b988393eb8f46f5` | GPL-3.0-only；已按单游戏根目录、模块化 Lua、存档路径引用、指定路径发布和设计工具接入调整，见 [来源](../.agents/skills/qxqy-game-studio/provenance.md) |
+| `design-taste-frontend` | [taste-skill](https://github.com/Leonxlnx/taste-skill/tree/12af471f627f866411b4bd785b19646d3672784c)，2.1.5 | MIT；[来源与项目适配](../.agents/skills/design-taste-frontend/provenance.md) |
+| `impeccable` | [impeccable](https://github.com/pbakaus/impeccable/tree/df3a4abe7d0840d5f60324812c432e00b66a4e75)，Skill 4.8.0 / 引擎 0.1.18 | Apache-2.0；[来源与项目适配](../.agents/skills/impeccable/provenance.md) |
 
-- 原版源码：[Miliastra-toolbox/skills](https://github.com/1475505/Miliastra-toolbox/tree/5ee8f5eb4be99a7a094b190c8ed8213d30339538/skills)，固定提交 `5ee8f5eb4be99a7a094b190c8ed8213d30339538`（提交时间 `2026-10-06T17:15:14Z`），本次核对日期为 2026-10-22（Asia/Shanghai）。节点图 Skill 上游版本 `1.2.0`；Lua Skill 上游版本 `1.0.0`。
-- 用户指定的发布入口：[SkillHub](https://skillhub.cn/skills/user_3a6be892/miliastra-toolbox)。本次未能读取该页面，不声称其发布包与上述 GitHub 提交一致；本地文件依据已获取的固定 GitHub 提交整理。
-- 历史适配来源：[dsh-plugin-miliastra-toolbox](https://github.com/1475505/dsh-plugin-miliastra-toolbox) 提交 `f35d55c1109bb7d822e48b22695335278e7208bc`。这是本项目原有 MCP 适配契约的来源，不能替代原版 Skill 来源记录。本次核对六个工具的具名参数与正确上游一致，未改动适配器执行逻辑。
-- 上游两份 Skill 均声明 `license: Proprietary`，本地保留此标记。上游 `slug`、显示名称、版本和摘要移入 Codex 支持的 `metadata`；保留 `name`、`description`，调整 description 的触发范围。
-- 两份 `references/tools.md` 原样保留；两份 `SKILL.md` 保留原版工具选择、批量与顺序查询、领域示例、异常处理、排障和输出规范，并加入本项目接入说明：MCP 优先；工具未加载且允许网络访问时可直接 HTTP 查询；区分 MCP 文本内的结果与 HTTP 的 `data.result` 包裹，检查内部错误。
-- 本地语义澄清：节点图的 `side=client` 不等于客户端 Lua 控件；带关键词无结果不等于部署无语料，应通过无关键词查询核对；客户端 `related_nodes` 即使存在也为空；临时网络失败最多重试一次，不用换关键词解决连接或权限错误。来源标题无法唯一定位时说明限制，不假设支持文件名过滤、不将相关系统文档冒充精确来源全文。Lua 文档数量按快照标注，实际以服务返回为准。
-- Lua 工程约定另列为本地规则：`src/**/*.lua` 模块化维护、`dist/main.lua` 单文件构建、存档只保留产物路径/挂载且 `source` 留空、模拟器按路径读取同次产物、提交前执行只读 `check:saves`，不将其称为官方限制。
+设计工具的原始入口、配套文件及 LICENSE/NOTICE 保留；哈希清单为 `.agents/design-skills.lock.json`，用 `npm run design:check` 验证。可选引擎按需下载到项目内，使用与更新见 [设计指南](design-skills.md)。
 
-默认远端知识库为 `https://ugc.070077.xyz`，HTTP 端点前缀为 `/api/v1/skills/miliastra-knowledge/tools/`；客户端和节点图工具共用端点前缀但使用不同语料。可用 `MILIASTRA_KNOWLEDGE_BASE_URL` 指定兼容服务。工具名和参数以当前 MCP schema 为准；响应结构与语料快照可能随部署更新，需要实际查询核验。
+## 模板原创接入说明
 
-以下为固定提交的原始文件 SHA-256。配套参考的本地文件应与表中一致；本地 `SKILL.md` 已适配，不要求与原文哈希相同。
+- `miliastra-knowledge` 与 `miliastra-knowledge-lua` 为模板维护的 MIT 指引。接口参数以 [tools/miliastra-toolbox-mcp.mjs](../tools/miliastra-toolbox-mcp.mjs) 及当前 MCP schema 为准，说明见 [knowledge-api.md](knowledge-api.md)。本地适配器将 HTTP 查询转换为 stdio MCP，不要求安装 Harness 插件。
+- 外部知识服务来自 [Miliastra-toolbox](https://github.com/1475505/Miliastra-toolbox)，默认地址 `https://ugc.070077.xyz`，兼容服务可通过 `MILIASTRA_KNOWLEDGE_BASE_URL` 设置。历史 API 契约参考提交 `5ee8f5eb4be99a7a094b190c8ed8213d30339538`；更早的接入参考为 [dsh-plugin-miliastra-toolbox](https://github.com/1475505/dsh-plugin-miliastra-toolbox) 的 `f35d55c1109bb7d822e48b22695335278e7208bc`。这里只记录服务与契约来源，不声明对上游代码或语料拥有再许可权。
+- `miliastra-image-css-builder` 为模板原创的 MIT 工具接入流程；原始编辑器、专有 Skill 和参考文档不随本入口复制。外部实现和版本依据见 [接入来源](../.agents/skills/miliastra-image-css-builder/references/provenance.md)。
+- 模板自己的初始化、Lua 打包、复制发布和检查工具在项目内维护。Lua 使用 `src/**/*.lua`，打包为单文件，存档只保存产物路径/UI/挂载且 `source` 留空；这些是本模板工程约定，不称为官方平台限制。
 
-| 上游文件（相对 `skills/`） | SHA-256 |
-|---|---|
-| `miliastra-knowledge/SKILL.md` | `c35872a2d13917c1af34011cede93d8c0d589dece930c4ea8fb5a1b4e40ec5ce` |
-| `miliastra-knowledge/references/tools.md` | `d1288df452d30097445df0c56175e190f64a0ecc9ba719f31002dc758354f77a` |
-| `miliastra-knowledge-lua/SKILL.md` | `d567367bec00744182dfd48f95e497e16ce2ab4c0b6a155b1de41fccb0d4f89c` |
-| `miliastra-knowledge-lua/references/tools.md` | `6ce4c7f4db4c8231dc1c119b1141394982c9b853f218a0db46af0d03a7337ca5` |
+2026-10-31 公开版整理时，用户确认未取得或不确定专有 Skill 的公开再分发授权，因而将三份入口改为原创接入说明，并移除旧版复制参考。历史提交仍保有旧文件，本次不重写历史。
+
+## 安装依赖与外部图片服务
+
+直接依赖固定为 `beyond-simulator-mcp@0.4.1`、`beyond-simulator-web@0.4.1`、`@modelcontextprotocol/sdk@1.32.1`、`fengari@0.1.5`、`undici@8.11.2`、`zod@4.6.6`。完整依赖和完整性哈希在 `package-lock.json`，安装包内许可证继续适用。
+
+图片编辑器为 [qx.070077.xyz](https://qx.070077.xyz/) / [源码](https://github.com/1475505/Miliastra-image-editor-webui)；自动拟合为 [qx-img.070077.xyz](https://qx-img.070077.xyz/) / [源码](https://github.com/1475505/Miliastra-toolbox-primitive-shape)。服务本体按需在线使用或安装在忽略的 `.local-tools/`，当前仓库不分发。安装与交付路径见 [图片拟合指南](image-fitting.md)。

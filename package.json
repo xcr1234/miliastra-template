@@ -2,6 +2,15 @@
   "name": "miliastra-template",
   "version": "0.1.0",
   "private": true,
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/xcr1234/miliastra-template.git"
+  },
+  "homepage": "https://github.com/xcr1234/miliastra-template#readme",
+  "bugs": {
+    "url": "https://github.com/xcr1234/miliastra-template/issues"
+  },
   "type": "module",
   "description": "Project-scoped Miliastra skills, MCP tools, modular Lua build and deployment",
   "engines": { "node": ">=22.19.0" },

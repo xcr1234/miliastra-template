@@ -1,11 +1,14 @@
 ---
 name: qxqy-game-studio
 description: 按策划案、TDD 测试用例、HTML 效果展示、千星美术参考图与素材、Lua 实现、测试、真机试玩与修复七步制作千星奇域 2D+Lua 游戏；不用于 3D 节点图。
+license: GPL-3.0-only
 ---
 
 # 千星 2D+Lua 游戏工作室
 
 目标是交付可在千星奇域真机运行的 Lua 游戏与完整存档。本工作流可供不同 AI 工具读取；模拟器操作以当前宿主实际提供的 MCP 或 Harness 工具为准。
+
+本目录来源与本地修改见 [provenance.md](provenance.md)，许可见 [LICENSE](LICENSE)。
 
 ## 按需读取
 

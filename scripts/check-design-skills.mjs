@@ -23,7 +23,12 @@ for (const skill of lock.skills) {
   }
 }
 const docs = [
-  'AGENTS.md', 'README.md', 'docs/design-skills.md', 'docs/tool-sources.md',
+  'AGENTS.md', 'README.md', 'CONTRIBUTING.md', 'THIRD_PARTY_NOTICES.md',
+  'docs/design-skills.md', 'docs/tool-sources.md', 'docs/knowledge-api.md', 'docs/image-fitting.md',
+  ...['miliastra-knowledge', 'miliastra-knowledge-lua', 'miliastra-image-css-builder']
+    .map(name => `.agents/skills/${name}/SKILL.md`),
+  '.agents/skills/miliastra-image-css-builder/references/provenance.md',
+  '.agents/skills/qxqy-game-studio/provenance.md',
   '.agents/skills/design-taste-frontend/SKILL.md', '.agents/skills/design-taste-frontend/provenance.md',
   '.agents/skills/impeccable/SKILL.md', '.agents/skills/impeccable/provenance.md',
   '.agents/skills/qxqy-game-studio/SKILL.md',

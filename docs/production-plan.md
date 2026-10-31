@@ -83,3 +83,13 @@
 - 命令 smoke：Taste 应用风格抽取成功；临时测试页的 inspect 在 1440/768/390 宽度生成 6 张截图，结果 0 FAIL、2 WARN（测试页留白/画布使用提示，不作为游戏设计验收）。Impeccable `engine-probe` 返回 `impeccable-engine 0.1.18`；context 可读取目标事实；`detect --json` 对仅本机访问的临时测试页返回 `[]`、退出 0。测试页和临时服务器仅用于工具接入，服务器已结束。
 - 环境差异：首次 Node 原生下载因未使用宿主代理超时，调整为项目已有 undici 的 EnvHttpProxyAgent 后下载、校验和探针通过。Taste 浏览器在沙箱内崩溃，在获宿主执行权限后原命令通过。回归测试进程的 TEMP/TMP 设到项目 `.local-tools/design-test-tmp/`，避免此前系统临时目录的 Windows rename 权限问题。
 - 验证边界与下一步：以上是模板工具、临时 HTML 页与静态资料验证；未操作游戏模拟器或存档，未运行游戏 runCase、未发布或真机验证。后续游戏按最早缺失证据的步骤继续，到步骤 3 再用本次接入的 Skill 制作和审查真实原型。使用、限制与固定版本更新见 [设计指南](design-skills.md)。
+
+## 2026-10-31：公开版 README 与许可证整理
+
+- 当前范围：用户要求面向其他使用者更新 README 和 License，并明确项目完全公开。本轮为模板文档、许可范围与接入资料维护，既有策划草稿和游戏步骤保持原状态。
+- README：调整为能力介绍、环境要求、Use this template 快速开始、七步流程、命令表、视觉/图片工具、Lua 发布、本机配置、贡献入口和许可范围。新增 CONTRIBUTING.md；package.json 增加仓库、主页、问题入口和 MIT 元数据，package-lock 根许可同步，依赖版本保持不变。private:true 仅防止误发布 npm 包，已在 README 说明。
+- 许可范围：自有部分新增 MIT LICENSE；第三方目录保留各自许可，新增 THIRD_PARTY_NOTICES.md。七步工作流来源仓库的 GPL 文本已随目录保存，入口标 GPL-3.0-only，并记录本地修改；Taste 的 MIT、Impeccable 的 Apache/NOTICE 与固定文件未改动。
+- 明确的用户取舍：发现三份入口标 Proprietary，知识库来源的固定提交无根许可证；用户选择“未获得或不确定：公开版改用原创接入说明”。已重写知识库与图片编辑三个入口，移除旧版复制参考，新增基于本地适配器的 knowledge-api.md，更新图片接入来源说明。没有将上游专有文件改标签后当成 MIT；官方语料、外部服务与游戏素材不随模板重新授权。
+- 来源核对：只读核对 Miliastra-toolbox、图片编辑器、模拟器及历史适配仓库的固定树/许可；直接依赖许可证来自本机包元数据及锁文件。根许可格式和公开仓库许可说明参考 GitHub Choose a License / GitHub Docs；npm private 字段参考 npm 官方文档。
+- 验证：33/33 工具回归通过；六个 Skill 通过 quick_validate；105 个固定设计工具文件和 120 个本地文档链接校验通过；package/lock 许可及依赖一致；check:saves 为 0 存档/0问题；git diff --check 通过。未新增平台 API、未操作游戏模拟器、未测试真机或复制游戏产物。
+- 发布边界：提交 1c010ba 及更早历史仍包含旧版复制文本，已在第三方声明中明确；本轮未重写历史。当前文件清理不等于历史授权或历史清理，不能把本次 MIT 解释为对旧版第三方文本的追溯授权。

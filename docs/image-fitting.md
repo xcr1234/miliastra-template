@@ -25,7 +25,7 @@
 3. 在在线或本地图片编辑器导入 CSS/JSON，检查画布尺寸、图元数量、层序、颜色、透明度与警告，以导入后的预览为准。
 4. 调整关键轮廓、五官或 UI 对齐，保存可继续编辑的场景 JSON，再导出所需 GIA 或 Lua。
 
-该 Skill 已随模板放入项目 `.agents/skills/miliastra-image-css-builder/`，版本 `1.0.13`，固定上游提交 `cd4e08accc63f19774f844f38ad9b9c8dc2d3b79`，配套参考和来源说明一并纳入 Git；后续 clone 无需另装全局 Skill。Skill 本身不会启动图片服务或配置网站 WebMCP，只有实际发现页面工具后才按其 schema 操作，否则通过文件导入/导出。
+项目 `.agents/skills/miliastra-image-css-builder/` 随模板提供原创的 MIT 接入说明；不复制上游专有 Skill 和参考文档。生成文件前按入口链接核对所用版本的解析器或页面 schema，来源说明见 [provenance.md](../.agents/skills/miliastra-image-css-builder/references/provenance.md)。该入口不会启动图片服务或配置网站 WebMCP，只有实际发现页面工具后才按其 schema 操作，否则通过文件导入/导出。
 
 ## 方案二：自动拟合
 
