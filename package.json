@@ -20,7 +20,7 @@
     "build": "node tools/lua-project.mjs build",
     "build:lua": "node tools/lua-project.mjs build",
     "deploy:lua": "node tools/lua-project.mjs deploy",
-    "test": "node --test scripts/test-save-references.mjs scripts/test-lua-bundle.mjs scripts/test-lua-project.mjs scripts/test-setup.mjs scripts/test-design-tools.mjs",
+    "test": "node --test scripts/test-bootstrap-gia.mjs scripts/test-save-references.mjs scripts/test-lua-bundle.mjs scripts/test-lua-project.mjs scripts/test-setup.mjs scripts/test-design-tools.mjs",
     "check:saves": "node tools/check-save-references.mjs",
     "design:check": "node scripts/check-design-skills.mjs",
     "design:taste": "node tools/design-tools.mjs taste",

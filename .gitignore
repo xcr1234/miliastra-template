@@ -4,6 +4,7 @@ dist/
 .codex/config.toml
 .codex/mcp.local.json
 lua.deploy.local.json
+.lua-project-id
 .lua-deploy-state.json
 .lua-deploy-backups/
 .taste-skill/

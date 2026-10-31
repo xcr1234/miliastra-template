@@ -70,6 +70,18 @@ test('preserves lazy loading and isolates locals with the same name', async t =>
   execute(result.code, 'assert(initialized == nil); OnStart(); assert(initialized == true)');
 });
 
+test('project header escapes names and preserves runnable Lua and source mappings', async t => {
+  const source = 'function GetValue() return 42 end';
+  const options = await fixture(t, { 'main.lua': source });
+  const projectIdentity = { id: 'fc296edd-4314-47ae-87dd-8705f80f11f0', name: '游戏 "demo"\nerror("injected")' };
+  const result = await bundleLua({ ...options, projectIdentity });
+  assert.equal(result.code.split('\n')[0], `-- miliastra-project: ${JSON.stringify(projectIdentity)}`);
+  assert.deepEqual(result.map.projectIdentity, projectIdentity);
+  const mapping = result.map.modules.find(row => row.module === 'main');
+  assert.equal(result.code.split('\n').slice(mapping.startLine - 1, mapping.endLine).join('\n'), source);
+  execute(result.code, 'assert(GetValue() == 42)');
+});
+
 test('module initialization happens once for nil and false exports', async t => {
   const options = await fixture(t, {
     'main.lua': 'assert(require("empty") == true); assert(require("empty") == true); assert(require("disabled") == false); assert(require("disabled") == false)',

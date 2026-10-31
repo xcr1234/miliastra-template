@@ -34,13 +34,15 @@
 ## 工程与交付约定
 
 - 所有 Skill、MCP 配置、npm 依赖都留在项目内，不安装到用户全局目录。
-- 项目路径改变或首次 clone 后运行 `npm run setup`，从 `.codex/config.template.toml` 生成本机 `.codex/config.toml`。代理仅按实际需要配置，不把示例代理或游戏路径当成用户已选目标。
+- 项目路径改变或首次 clone 后运行 `npm run setup`，从 `.codex/config.template.toml` 生成本机 `.codex/config.toml`，并首次生成 Git 忽略的 `.lua-project-id`。UUID 在本项目内保持不变，不随改名、重复 setup 或编译重建；新建独立游戏时不要复制该本机文件。代理仅按实际需要配置，不把示例代理或游戏路径当成用户已选目标。
 - Lua 按职责拆分到 `src/**/*.lua`，入口 `src/main.lua` 保留平台生命周期回调；使用静态 `require("app.lifecycle")`，模块返回 table，内部状态使用 local。
-- `npm run build:lua` 将入口及依赖打包为项目内 `dist/main.lua`，配置见 `lua.project.json`。维护源是 `src`，生成文件不直接修改。新增平台 API 先通过 `miliastra-knowledge-lua` 核对。
+- `npm run build:lua` 将入口及依赖打包为 `dist/main.lua`；未配置部署目标时只生成项目内产物，配置 `lua.deploy.local.json` 后每次编译自动将同次产物 deploy 到真实路径，部署失败则命令失败。维护源是 `src`，生成文件不直接修改。新增平台 API 先通过 `miliastra-knowledge-lua` 核对。
 - Git 中的模拟器存档保留 UI、索引和挂载关系，脚本 `path` 指向 `dist/main.lua`（或 `lua.project.json` 配置的产物），`scripts[].source` 留空，不内嵌生成代码。模拟器启动时按工作区路径读取同次构建产物；修改 Lua 后重新构建、重启试玩并回归；修改存档结构后显式保存。提交前执行 `npm run check:saves`。
 - 旧存档或编辑器出现非空内嵌源码时，先比较并将有效改动合并回 `src`，重新构建和验证后才清空 `source`；不直接删除尚未审阅的源码。需要独立分享工程时，另带单文件产物；本机配置、备份与 `dist/` 不提交 Git。
-- 交付采用“项目内打包 → 复制单个产物到用户指定完整文件路径”。用户明确指定目标且要求复制时，可在宿主权限允许范围内执行 `npm run deploy:lua`；未指定或仅给示例时只准备产物。配置目标本身不会复制文件。
-- 目标路径放在 Git 忽略的 `lua.deploy.local.json`。复制前可用 `npm run deploy:lua -- --dry-run` 看源/目标和冲突；首次覆盖已有文件或目标被外部修改时先比较，合并有效改动回模块。只有用户已授权覆盖已审阅的冲突时才使用 `--overwrite`。
+- 首次交付导出一个包含所需 UI/模板、映射/挂载与空白入口 Lua 的 GIA 整合包，不在 GIA 放入生产源码。用户导入并打开千星沙箱，找到导入后真实 Lua 文件路径，填写 `lua.deploy.local.json`，随后立刻执行一次 `npm run deploy:lua`。空白文件没有项目标记，归属校验会停止；交付目标路径、文件检查结果和覆盖计划，取得用户对此文件的明确同意后执行 `npm run deploy:lua -- --overwrite`。单独保存 JSON 不会触发文件监听或复制，不等下一次改代码才做首次部署。
+- 首次部署后，日常 `npm run build` / `npm run build:lua` 都自动 deploy 到已配置的同一路径；用户指定真实路径并要求按此流程部署后，后续同路径编译同步复用该授权。没有真实目标或只给了示例时，不猜目录、不复制。纯 Lua 改动不重新生成 GIA；只有需重新导入的 UI/模板/资源、映射或挂载结构变化时，才重导 GIA 并核对真实路径与索引。
+- Lua 产物第一行记录项目名和 UUID，以 UUID 判定归属。部署到任何已有文件前先校验首行；无标记、无效标记或 UUID 不符时停止，包括空白文件和旧版产物。即使历史部署哈希相符也不能绕过归属校验；UUID 相同仍须检查外部修改。
+- 目标路径放在 Git 忽略的 `lua.deploy.local.json`。可用 `npm run deploy:lua -- --dry-run` 查看源/目标、双方标识和冲突。覆盖前先读目标、比较并合并有效内容回模块；只有用户已明确同意覆盖该已审阅文件时才使用 `--overwrite`。不得自行加此参数、改写目标标记或删除 UUID/部署记录来绕过校验；一般的编译/部署授权不等于对归属失败文件的覆盖同意。
 - 发布命令每次重新构建，失败则不复制；替换前备份旧目标，成功后核对 SHA-256。复制成功、编辑器重新加载和真机验证分别记录，不以磁盘复制成功冒充真机通过。
 - 千星只给单文件产物建立映射和挂载。`.map.json`、`src` 模块、本机配置和备份不上传。
 

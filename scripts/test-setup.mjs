@@ -16,7 +16,12 @@ async function fixture(t) {
 
 test('setup rewrites MCP paths for each clone without a default proxy or target', async t => {
   const root = await fixture(t);
-  await setupProject(root);
+  const initialized = await setupProject(root);
+  assert.match(initialized.projectId, /^[0-9a-f-]{36}$/);
+  assert.equal((await readFile(join(root, '.lua-project-id'), 'utf8')).trim(), initialized.projectId);
+  assert.equal((await setupProject(root)).projectId, initialized.projectId);
+  const another = await fixture(t);
+  assert.notEqual((await setupProject(another)).projectId, initialized.projectId);
   const config = await readFile(join(root, '.codex/config.toml'), 'utf8');
   assert.ok(config.includes(root.replaceAll('\\', '/')));
   assert.ok(!config.includes('__PROJECT_ROOT__'));

@@ -82,11 +82,11 @@ npm run setup
 
 | 命令 | 作用 |
 |---|---|
-| `npm run setup` | 生成当前项目的本机 MCP 配置 |
+| `npm run setup` | 生成本机 MCP 配置；首次生成项目 UUID |
 | `npm test` | 回归 Lua 构建、发布、存档引用、初始化和设计工具 |
 | `npm run check` | 启动两个项目 MCP 并检查工具列表 |
 | `npm run check -- --online` | 增加一次远端知识库查询 |
-| `npm run build:lua` | 构建 `dist/main.lua`，不复制到游戏目录 |
+| `npm run build:lua` | 编译 `dist/main.lua`；真实目标已配置时自动 deploy |
 | `npm run check:saves` | 只读检查 Git 管理范围内的模拟器存档 |
 | `npm run preview` | 先构建并检查存档，再打开 Web 编辑器 |
 | `npm run design:check` | 校验设计工具固定文件与项目文档链接 |
@@ -94,7 +94,7 @@ npm run setup
 | `npm run design:impeccable -- --help` | 查看 Impeccable 的项目包装命令 |
 | `npm run deploy:lua -- --dry-run` | 重新构建并预览已配置目标，不复制 |
 
-存档保存 UI、索引、挂载与脚本路径，`scripts[].source` 留空；生成代码留在忽略的 `dist/`。修改 Lua 后重新构建并重启试玩；旧内嵌源码先审阅、合并有效修改，再清空。提交前执行 `npm run check:saves`。独立分享工程时另带单文件产物，详见 [Lua 构建与发布](docs/lua-modules.md)。
+存档保存 UI、索引、挂载与脚本路径，`scripts[].source` 留空；生成代码留在忽略的 `dist/`。修改 Lua 后重新编译并重启试玩，目标已配置时编译同时 deploy；旧内嵌源码先审阅、合并有效修改，再清空。提交前执行 `npm run check:saves`。详细规则见 [Lua 构建与发布](docs/lua-modules.md)。
 
 ## 视觉设计与素材
 
@@ -106,19 +106,45 @@ npm run setup
 
 图片编辑入口和两份知识库 Skill 是本项目原创的接入说明；外部服务、官方语料和完整图片编辑器由各自项目提供。使用与更新见[设计工具指南](docs/design-skills.md)、[图片拟合指南](docs/image-fitting.md)和[知识查询接入](docs/knowledge-api.md)。
 
-## Lua 发布与本机配置
+## 首次导入与后续 Lua 部署
 
-为本机保存真实的单文件目标路径：
+1. 步骤 6 经用户验收后，在步骤 7 导出一个 GIA 整合包：包含需要的 UI/模板、映射/挂载，以及**空白入口 Lua**，不把生产源码放进 GIA。
+2. 用户将 GIA 导入游戏，打开千星沙箱，找到导入后真实 Lua 文件的完整路径，核对映射/挂载及实际索引。
+3. 将真实路径填入 Git 忽略的 `lua.deploy.local.json`：
 
-```powershell
-npm run setup -- --target 'C:\你的游戏脚本目录\main.lua'
-npm run deploy:lua -- --dry-run
+```json
+{
+  "targetFile": "C:/请替换为游戏中确认的真实目录/main.lua"
+}
+```
+
+4. **填写后立即发起首次部署**：
+
+```sh
 npm run deploy:lua
 ```
 
-目标必须是实际的完整 `.lua` 路径；示例路径不代表已配置目标。发布会重新构建，替换前备份，复制后核对 SHA-256。已有未知内容或外部修改会阻止覆盖，先比较并合并回 `src/`。磁盘复制、编辑器重新加载与真机验证是三个独立步骤。
+已有空白 Lua 没有项目标记，命令会停止。核对提示中的目标路径和文件内容、明确同意覆盖后执行 `npm run deploy:lua -- --overwrite`；旧文件会备份。Agent 不能自行补上覆盖参数。首次写入后，产物首行会带项目名称和 UUID：
 
-需要代理时按实际地址设置，例如 `npm run setup -- --proxy http://127.0.0.1:你的端口`，清除用 `npm run setup -- --no-proxy`。本机代理、部署目标、备份、缓存和生成配置均被 Git 忽略。
+```lua
+-- miliastra-project: {"id":"fc296edd-4314-47ae-87dd-8705f80f11f0","name":"my-game"}
+```
+
+UUID 在首次 setup 或编译时生成，保存在 Git 忽略的 `.lua-project-id`，之后保持不变；新模板副本会生成自己的 UUID。项目名称取自 `lua.project.json` 的 `name`，改名不改变 UUID。
+
+也可以用 setup 辅助填写，但保存配置后仍须紧接着首次 deploy：
+
+```powershell
+npm run setup -- --target 'C:\你的游戏脚本目录\main.lua'
+npm run deploy:lua
+```
+
+5. 此后每次修改源码运行 `npm run build:lua`（或 `npm run build`），都会自动 deploy 到同一真实路径；`npm run preview` 中的编译也会同步。没有目标配置时只编译到项目内，部署失败则命令失败。
+6. **只改 Lua 不重新生成 GIA**。只有需要重新导入的 UI/模板/资源、映射或挂载结构变化时，才重导 GIA，并再次核对真实路径和索引。
+
+示例路径不代表已配置目标，单独保存 JSON 不触发复制。已有文件的首行标记缺失、无效或 UUID 不符时，一律先取得覆盖同意；同项目文件被外部修改也会停止，先比较并合并有效内容回 `src/`。`npm run deploy:lua -- --dry-run` 可预览双方标识和冲突，不复制。每次复制核对 SHA-256；磁盘复制、千星编辑器保存/重新加载与真机试玩是独立证据。
+
+需要代理时按实际地址设置，例如 `npm run setup -- --proxy http://127.0.0.1:你的端口`，清除用 `npm run setup -- --no-proxy`。本机代理、UUID、部署目标、备份、缓存和生成配置均被 Git 忽略。
 
 ## 目录与进一步阅读
 
