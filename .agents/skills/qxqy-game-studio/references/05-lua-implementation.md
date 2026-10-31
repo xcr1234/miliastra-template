@@ -2,7 +2,7 @@
 
 ## 输入与适用时机
 
-读取策划案、`tests/*.json`、美术清单与 UI 还原方案；已有工程同时读取存档、源码和最近结果。从本步骤开始操作模拟器。
+先按 [逐步验收](stage-approval.md) 核对步骤 1–4 的用户确认；任何前序尚未验收时，不开始 Lua 或游戏存档骨架。读取已验收策划、`tests/*.json`、美术清单与还原方案；已有工程同时读取存档、源码和最近结果。从本步骤开始操作模拟器。
 
 写依赖编辑器 API 的 Lua 前，复用 [PREFLIGHT 已核验的知识来源](workflow.md#知识库发现与可用性核验)，定向核对当前所需的官方 2D/Lua 文档，遵守 `AGENTS.md`。新增 API 的资料缺失时先检查已配置来源，仅请用户补齐仍缺少的内容；不从普通 Lua/UI 框架或 3D 节点图经验猜接口。未知语义先查文档或做单问题探针。
 
@@ -54,4 +54,4 @@ screenshot or snapshot / remaining risk
 
 ## 下一步与回退
 
-进入 [6. 测试](06-simulator-testing.md)。规则变化回 [步骤 1](01-game-design.md)和 [步骤 2](02-test-cases.md)，素材问题回 [步骤 4](04-art-assets.md)。GIA 导入造成索引变化时读 [步骤 7 的索引校准](07-device-validation.md#导入后的索引校准)。
+展示本步实现候选、构建/必要回归、挂载与限制，标记 `awaiting-user-confirmation` 并结束本轮。用户明确验收本步后，才进入 [6. 测试](06-simulator-testing.md)。规则或素材变化按逐步验收规则回相应前序阶段；GIA 索引差异可查 [索引校准说明](07-device-validation.md#导入后的索引校准)，读取参考不代表已进入步骤 7。

@@ -62,7 +62,7 @@ npm run setup
 
 ## 开发流程
 
-默认遵循 [AGENTS.md](AGENTS.md) 与项目内 [qxqy-game-studio](.agents/skills/qxqy-game-studio/SKILL.md)：
+游戏开发强制遵循 [AGENTS.md](AGENTS.md) 与项目内 [qxqy-game-studio](.agents/skills/qxqy-game-studio/SKILL.md)，按下面七步依次推进。**每一步都先交付给用户验收并停下等待；收到明确确认后，才进入下一步。**不跳步、不合并验收、不提前做后续阶段产物。详细判定见 [逐步验收规则](.agents/skills/qxqy-game-studio/references/stage-approval.md)。
 
 | 步骤 | 本阶段交付 |
 |---|---|
@@ -74,7 +74,9 @@ npm run setup
 | 6. 模拟器测试 | 规则用例、交互试玩、布局截图与缺陷回归 |
 | 7. 真机验证与修复 | 实际导入、索引、映射、挂载和试玩结果 |
 
-步骤 1–4 不操作游戏模拟器存档。进度与依据写入 `docs/production-plan.md`，实际试玩按需写入 `records/playtest.md`，并标明 `runtime=html|simulator|device`。已有项目从最早缺失证据的步骤继续，局部修复只处理受影响阶段。
+步骤 1–4 不操作游戏模拟器存档。进度与验收记录写入 `docs/production-plan.md`，阶段状态为 `in-progress`、`awaiting-user-confirmation`、`accepted`；记录产物版本和用户回复依据。实际试玩按需写入 `records/playtest.md`，标明 `runtime=html|simulator|device`。已有项目按顺序核对有效验收，从最早尚未验收的步骤继续；变更影响已验收内容时回退后重新验收。
+
+尤其是 HTML 原型：生成、自测或设计工具检查通过后，仍要展示可打开的演示并等待用户确认。未回复、自动续跑或“开始设计”等总体指令不等于验收；收到修改意见就继续调整原型，不能同时开始正式素材或 Lua。
 
 ## 常用命令
 

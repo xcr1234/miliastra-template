@@ -11,6 +11,8 @@ metadata:
 
 首次使用先读[项目接入指南](../../../docs/design-skills.md)。这是项目适配流程；[上游入口](UPSTREAM-SKILL.md)和 reference 保留为方法资料，不直接执行其 Setup、init、委派、hook、浏览器注入或收尾门槛。
 
+游戏开发服从 [七步逐步验收](../qxqy-game-studio/references/stage-approval.md)。审查和修复限于当前阶段；评审通过或检测绿灯不替代用户验收，不自动启动下一阶段。
+
 ## 接入已有上下文
 
 读取目标界面、已有 `docs/gdd.md`、用例、原型、`docs/art-bible.md` 和相关试玩证据；只读取实际存在且本轮需要的文件。复用现有文档，不要求另建 `PRODUCT.md` / `DESIGN.md`，也不因缺失它们阻塞小范围修复。使用[项目评审清单](references/game-ui-review.md)记录实际问题与证据。
@@ -38,7 +40,7 @@ npm run design:impeccable -- detect prototype/index.html
 | animate / 动效 | [animate](reference/animate.md) | 成功、受伤、冷却的反馈意图与千星降级方案 |
 | audit / 检查 | [audit](reference/audit.md) | HTML 技术检查；模拟器/真机走实际平台清单 |
 
-本项目默认单上下文评审，明确写出方法；不宣称执行上游双独立评审，不为普通评审另设委派确认。只有任务明确要求多代理时才按宿主授权规则处理。参考中的原始启动器命令、PRODUCT/DESIGN 文件和网页专用规则均按本入口及项目指南适配，不照搬执行。
+本项目默认单上下文评审，明确写出方法；不宣称执行上游双独立评审，不为普通评审另设委派确认。这只涉及代理委派，七步阶段验收仍必须等待用户。只有任务明确要求多代理时才按宿主授权规则处理。参考中的原始启动器命令、PRODUCT/DESIGN 文件和网页专用规则均按本入口及项目指南适配，不照搬执行。
 
 ## 结果与修复
 

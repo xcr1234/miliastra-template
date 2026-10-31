@@ -11,6 +11,8 @@ metadata:
 
 首次使用先读[项目接入指南](../../../docs/design-skills.md)。这是项目适配入口；[原始入口](UPSTREAM-SKILL.md)及配套 library、assets、scripts 保留用于查阅与复用。本入口决定游戏任务的流程与范围，不直接执行上游网站制作的整套流程。
 
+游戏开发服从 [七步逐步验收](../qxqy-game-studio/references/stage-approval.md)。本 Skill 只处理当前已获准进入的阶段；HTML 展示完必须停下来等待用户验收，不能顺带进入正式素材、Lua 或存档搭建。
+
 ## 按需读取
 
 - 步骤 3 初稿或重设计：读取已有 GDD、用例、原型和美术约束；按需读[布局](references/layout.md)、[字体](references/type.md)、[颜色](references/colour.md)。菜单、设置、背包可参考[应用界面](references/app-screens.md)的信息组织，避免套用后台仪表盘壳。

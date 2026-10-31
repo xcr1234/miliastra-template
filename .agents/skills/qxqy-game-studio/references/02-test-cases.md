@@ -2,7 +2,7 @@
 
 ## 输入与适用时机
 
-读取策划案中的 `CONTRACT`、状态机、不变量和目标画布。新游戏在 HTML 展示与生产 Lua 之前制定用例；已有缺陷只补充相关回归用例。
+先核对步骤 1 已获用户验收；未确认就停在步骤 1。读取已验收策划案中的 `CONTRACT`、状态机、不变量和目标画布。用例在 HTML 与生产 Lua 之前制定；已有用例按本轮范围更新，阶段确认遵守 [逐步验收](stage-approval.md)。
 
 ## 执行动作
 
@@ -49,4 +49,4 @@
 
 ## 下一步与回退
 
-新游戏进入 [3. HTML 效果展示](03-html-prototype.md)，用例留给 [5. Lua 编码实现](05-lua-implementation.md)执行。规则不清回 [1. 策划案](01-game-design.md)；规则变化先改契约与用例。
+展示用例覆盖、操作/预期和未覆盖项，标记 `awaiting-user-confirmation` 并结束本轮。用户明确验收后，才进入 [3. HTML 效果展示](03-html-prototype.md)；用例留给 [5. Lua 编码实现](05-lua-implementation.md)执行。规则不清时按逐步验收规则回 [1. 策划案](01-game-design.md)，不带着未确认规则进入后续阶段。

@@ -32,7 +32,8 @@ const docs = [
   '.agents/skills/design-taste-frontend/SKILL.md', '.agents/skills/design-taste-frontend/provenance.md',
   '.agents/skills/impeccable/SKILL.md', '.agents/skills/impeccable/provenance.md',
   '.agents/skills/qxqy-game-studio/SKILL.md',
-  ...['03-html-prototype', '04-art-assets', '06-simulator-testing', '07-device-validation']
+  ...['workflow', 'stage-approval', '01-game-design', '02-test-cases', '03-html-prototype',
+    '04-art-assets', '05-lua-implementation', '06-simulator-testing', '07-device-validation']
     .map(name => `.agents/skills/qxqy-game-studio/references/${name}.md`),
 ];
 for (const doc of docs) {
